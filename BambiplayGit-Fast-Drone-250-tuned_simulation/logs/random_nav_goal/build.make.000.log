@@ -1,0 +1,8 @@
+[35m[1mScanning dependencies of target random_tracking_goal[0m
+[35m[1mScanning dependencies of target random_nav_goal[0m
+[ 25%] [32mBuilding CXX object CMakeFiles/random_tracking_goal.dir/src/random_tracking_goal.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/random_nav_goal.dir/src/random_nav_goal.cpp.o[0m
+[ 75%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/random_nav_goal/lib/random_nav_goal/random_nav_goal[0m
+[100%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/random_nav_goal/lib/random_nav_goal/random_tracking_goal[0m
+[100%] Built target random_nav_goal
+[100%] Built target random_tracking_goal

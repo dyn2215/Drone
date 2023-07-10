@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<robot name="pioneer3dx" xmlns:xacro="http://ros.org/wiki/xacro">
+	<xacro:arg name="tf_prefix" default="robot1_tf" />
+  <xacro:arg name="robot_name" default="robot1" />
+
+  <xacro:include filename="$(find warehouse_simulation)/urdf/pioneer3dx_body.xacro"/>
+
+</robot>

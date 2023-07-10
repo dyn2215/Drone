@@ -1,0 +1,4 @@
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/poscmd_2_odom/poscmd_2_odom
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/poscmd_2_odom.pc
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/poscmd_2_odom/cmake/poscmd_2_odomConfig.cmake
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/poscmd_2_odom/cmake/poscmd_2_odomConfig-version.cmake

@@ -1,0 +1,5 @@
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/libplan_env.so
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/plan_env/obj_generator
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/plan_env.pc
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/plan_env/cmake/plan_envConfig-version.cmake
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/plan_env/cmake/plan_envConfig.cmake

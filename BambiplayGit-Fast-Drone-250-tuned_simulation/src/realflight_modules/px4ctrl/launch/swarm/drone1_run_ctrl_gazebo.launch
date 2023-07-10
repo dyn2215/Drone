@@ -1,0 +1,28 @@
+<launch>
+    <arg name="drone_id" value="1"/>  
+    <arg name="drone_name" value="drone$(arg drone_id)"/>
+   
+    <arg name="node_name" value="$(arg drone_name)_px4ctrl"/>
+	<node pkg="px4ctrl" type="px4ctrl_node" name="$(arg node_name)" output="screen">
+        	<!-- <remap from="~odom" to="/vicon_imu_ekf_odom" /> -->
+			
+			<remap from="~odom" to="/$(arg drone_name)/odom_true" />
+
+		<remap from="~cmd" to="/$(arg drone_name)/position_cmd" />
+		<remap from="/mavros/state" to="/$(arg drone_name)/mavros/state" />
+        <remap from="/mavros/extended_state" to="/$(arg drone_name)/mavros/extended_state" />
+        <remap from="/mavros/imu/data" to="/$(arg drone_name)/mavros/imu/data" />
+        <remap from="/mavros/rc/in" to="/$(arg drone_name)/mavros/rc/in" />
+        <remap from="/mavros/battery" to="/$(arg drone_name)/mavros/battery" />
+        <remap from="~takeoff_land" to="/$(arg drone_name)/px4ctrl/takeoff_land" />
+		<remap from="/mavros/setpoint_raw/attitude" to="/$(arg drone_name)/mavros/setpoint_raw/attitude" />
+		<remap from="/debugPx4ctrl" to="$(arg drone_name)/debugPx4ctrl"/>
+        <remap from="/mavros/set_mode" to="$(arg drone_name)/mavros/set_mode"/>
+        <remap from="/mavros/cmd/arming" to="$(arg drone_name)/mavros/cmd/arming"/>
+        <remap from="/mavros/cmd/command" to="$(arg drone_name)/mavros/cmd/command"/>
+        <remap from="~traj_start_trigger" to="/$(arg drone_name)/traj_start_trigger"/>        
+		<rosparam command="load" file="$(find px4ctrl)/config/ctrl_param_fpv.yaml" />
+	</node>
+ 
+</launch>
+

@@ -1,0 +1,5 @@
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/uwb/draft_node
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/uwb/uwb_sim
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/uwb.pc
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/uwb/cmake/uwbConfig.cmake
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/uwb/cmake/uwbConfig-version.cmake

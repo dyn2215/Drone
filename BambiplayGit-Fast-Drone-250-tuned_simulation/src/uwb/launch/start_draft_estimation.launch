@@ -1,0 +1,10 @@
+<launch>
+    <arg name="self_id" default="0"/>
+
+    <group ns="drone$(arg self_id)">
+        <node name="draft_estimation" pkg="uwb" type="draft_estimation_node" output="screen">
+            <param name="self_id" type="int" value="$(arg self_id)"/>
+        </node>
+    </group>
+
+</launch>

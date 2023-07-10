@@ -1,0 +1,6 @@
+uav_simulator/local_sensing
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/local_sensing_node/cmake.lock /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/./cmake.lock
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/local_sensing_node/lib/local_sensing_node/pcl_render_node /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/local_sensing_node/pcl_render_node
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/local_sensing_node/lib/pkgconfig/local_sensing_node.pc /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/local_sensing_node.pc
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/local_sensing_node/share/local_sensing_node/cmake/local_sensing_nodeConfig-version.cmake /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/local_sensing_node/cmake/local_sensing_nodeConfig-version.cmake
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/local_sensing_node/share/local_sensing_node/cmake/local_sensing_nodeConfig.cmake /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/local_sensing_node/cmake/local_sensing_nodeConfig.cmake

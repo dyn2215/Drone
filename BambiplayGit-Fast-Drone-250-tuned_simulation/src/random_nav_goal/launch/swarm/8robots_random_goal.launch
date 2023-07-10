@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<launch>
+
+<group ns="robot1">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="1" />
+  </node>
+  <node pkg="random_nav_goal" type="random_tracking_goal" name="random_tracking_goal" output="screen">
+    <param name = "id" value ="1" />
+  </node>
+</group>
+
+<group ns="robot2">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="2" />
+  </node>
+  <node pkg="random_nav_goal" type="random_tracking_goal" name="random_tracking_goal" output="screen">
+    <param name = "id" value ="2" />
+  </node>
+</group>
+
+<group ns="robot3">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="3" />
+  </node>
+  <node pkg="random_nav_goal" type="random_tracking_goal" name="random_tracking_goal" output="screen">
+    <param name = "id" value ="3" />
+  </node>
+</group>
+
+<group ns="robot4">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="4" />
+  </node>
+</group>
+
+<group ns="robot5">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="5" />
+  </node>
+</group>
+
+<group ns="robot6">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="6" />
+  </node>
+</group>
+
+<group ns="robot7">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="7" />
+  </node>
+</group>
+
+<group ns="robot8">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="8" />
+  </node>
+</group>
+</launch>

@@ -1,0 +1,14 @@
+<launch>
+<!-- drone0 -->
+<group ns="drone0">
+<include file="/home/songhy/Fast-Drone-250/src/planner/drone_detect/launch/swarm/drone_i_detect.launch">
+            <arg name="my_id" value="0"/>
+</include>
+</group>
+<!-- drone1 -->
+<group ns="drone1">
+<include file="/home/songhy/Fast-Drone-250/src/planner/drone_detect/launch/swarm/drone_i_detect.launch">
+            <arg name="my_id" value="1"/>
+</include>
+</group>
+</launch>

@@ -1,0 +1,20 @@
+CMake Error at CMakeLists.txt:297 (find_package):
+  By not providing "Findmetis_catkin.cmake" in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  "metis_catkin", but CMake did not find one.
+
+  Could not find a package configuration file provided by "metis_catkin" with
+  any of the following names:
+
+    metis_catkinConfig.cmake
+    metis_catkin-config.cmake
+
+  Add the installation prefix of "metis_catkin" to CMAKE_PREFIX_PATH or set
+  "metis_catkin_DIR" to a directory containing one of the above files.  If
+  "metis_catkin" provides a separate development package or SDK, be sure it
+  has been installed.
+
+
+make[2]: *** [CMakeFiles/gtsam_src.dir/build.make:108: gtsam_src-prefix/src/gtsam_src-stamp/gtsam_src-configure] Error 1
+make[1]: *** [CMakeFiles/Makefile2:304: CMakeFiles/gtsam_src.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

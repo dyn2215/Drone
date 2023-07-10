@@ -1,0 +1,8 @@
+planner/plan_manage
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/ego_planner/cmake.lock /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/./cmake.lock
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/ego_planner/lib/ego_planner/odom_publisher_node /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/ego_planner/odom_publisher_node
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/ego_planner/lib/ego_planner/ego_planner_node /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/ego_planner/ego_planner_node
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/ego_planner/lib/ego_planner/traj_server /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/ego_planner/traj_server
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/ego_planner/lib/pkgconfig/ego_planner.pc /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/ego_planner.pc
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/ego_planner/share/ego_planner/cmake/ego_plannerConfig-version.cmake /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/ego_planner/cmake/ego_plannerConfig-version.cmake
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/ego_planner/share/ego_planner/cmake/ego_plannerConfig.cmake /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/ego_planner/cmake/ego_plannerConfig.cmake

@@ -1,0 +1,26 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/getopt.c:[m[K In function ‘[01m[Kgk_getopt_internal[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/getopt.c:343:5:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K-Wmisleading-indentation[m[K]
+  343 |     [01;35m[Kif[m[K (gk_optind == 0)
+      |     [01;35m[K^~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/getopt.c:345:7:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+  345 |       [01;36m[Koptstring[m[K = gk_getopt_initialize (argc, argv, optstring);
+      |       [01;36m[K^~~~~~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/getopt.c:700:2:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kelse[m[K’ clause does not guard... [[01;35m[K-Wmisleading-indentation[m[K]
+  700 |  [01;35m[Kelse[m[K
+      |  [01;35m[K^~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/getopt.c:703:4:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kelse[m[K’
+  703 |    [01;36m[Knextchar[m[K = NULL;
+      |    [01;36m[K^~~~~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/csr.c:[m[K In function ‘[01m[Kgk_csr_Normalize[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/csr.c:1344:9:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K-Wmisleading-indentation[m[K]
+ 1344 |    else [01;35m[Kif[m[K (norm == 1)
+      |         [01;35m[K^~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/csr.c:1346:11:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+ 1346 |           [01;36m[Kfor[m[K (j=ptr[i]; j<ptr[i+1]; j++)
+      |           [01;36m[K^~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/csr.c:1371:9:[m[K [01;35m[Kwarning: [m[Kthis ‘[01m[Kif[m[K’ clause does not guard... [[01;35m[K-Wmisleading-indentation[m[K]
+ 1371 |    else [01;35m[Kif[m[K (norm == 1)
+      |         [01;35m[K^~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/metis_catkin/metis_src-prefix/src/metis_src/GKlib/csr.c:1373:11:[m[K [01;36m[Knote: [m[K...this statement, but the latter is misleadingly indented as if it were guarded by the ‘[01m[Kif[m[K’
+ 1373 |           [01;36m[Kfor[m[K (j=ptr[i]; j<ptr[i+1]; j++)
+      |           [01;36m[K^~~[m[K

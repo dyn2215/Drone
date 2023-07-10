@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<launch>
+
+<!-- launch the  simulator environment -->
+  <!-- <env name="GAZEBO_MODEL_PATH" value="${GAZEBO_MODEL_PATH}:$(find ugv_simulator)/models"/>
+  <env name="GAZEBO_RESOURCE_PATH" value="${GAZEBO_RESOURCE_PATH}:$(find ugv_simulator)/models"/>
+
+  <include file="$(find gazebo_ros)/launch/empty_world.launch">
+    <arg name="world_name" value="/home/songhy/gazebo_handmade_worlds/503_obs_v3.world"/>
+    <arg name="paused" value="false"/>
+    <arg name="gui" value="true"/> 
+  </include> -->
+
+
+<arg name="model" default="burger" />
+
+<!-- add robot  --> 
+<!-- BEGIN ROBOT 1-->
+<group ns="robot1">
+  
+  <param name="tf_prefix" value="robot1_tf" />
+  <include file="$(find ugv_simulator)/launch/burger/one_burger_robot.launch" >
+      <arg name="x_pos" default="1.75"/>
+      <arg name="y_pos" default="1.75"/>
+      <arg name="z_pos" default="0"/>  
+      <arg name="robot_name"  value="robot1" />
+      <arg name="tf_prefix" value="robot1_tf" />
+  </include>
+</group>
+
+
+<!-- BEGIN ROBOT 2-->
+<group ns="robot2">
+  
+  <param name="tf_prefix" value="robot2_tf" />
+  <include file="$(find ugv_simulator)/launch/burger/one_burger_robot.launch" >
+      <arg name="x_pos" default="1.75"/>
+      <arg name="y_pos" default="-1.75"/>
+      <arg name="z_pos" default="0"/>  
+      <arg name="robot_name"  value="robot2" />
+      <arg name="tf_prefix" value="robot2_tf" />
+
+  </include>
+</group>
+
+
+<!-- BEGIN ROBOT 3-->
+<group ns="robot3">
+  
+  <param name="tf_prefix" value="robot3_tf" />
+  <include file="$(find ugv_simulator)/launch/burger/one_burger_robot.launch" >
+      <arg name="x_pos" default="-1.75"/>
+      <arg name="y_pos" default="1.75"/>
+      <arg name="z_pos" default="0"/>  
+      <arg name="robot_name"  value="robot3" />
+      <arg name="tf_prefix" value="robot3_tf" />
+
+  </include>
+</group>
+
+<!-- BEGIN ROBOT 4-->
+<group ns="robot4">
+  
+  <param name="tf_prefix" value="robot4_tf" />
+  <include file="$(find ugv_simulator)/launch/burger/one_burger_robot.launch" >
+      <arg name="x_pos" default="-1.75"/>
+      <arg name="y_pos" default="-1.75"/>
+      <arg name="z_pos" default="0"/>  
+      <arg name="robot_name"  value="robot4" />
+      <arg name="tf_prefix" value="robot4_tf" />
+
+  </include>
+</group>
+
+
+<!-- rviz-->
+  <!-- <node pkg="rviz" type="rviz" name="rviz" args="-d $(find ugv_simulator)/rviz/navigation.rviz" output="screen"/> -->
+
+
+</launch>

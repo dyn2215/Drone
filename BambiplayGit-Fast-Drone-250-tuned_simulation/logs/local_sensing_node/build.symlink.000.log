@@ -1,0 +1,4 @@
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/local_sensing_node/pcl_render_node
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/local_sensing_node.pc
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/local_sensing_node/cmake/local_sensing_nodeConfig-version.cmake
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/local_sensing_node/cmake/local_sensing_nodeConfig.cmake

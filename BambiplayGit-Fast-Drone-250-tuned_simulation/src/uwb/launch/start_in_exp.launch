@@ -1,0 +1,24 @@
+<launch>
+    <arg name="self_id" default="0"/>
+    <arg name="init_x" default="0"/>
+    <arg name="init_y" default="0"/>
+    <arg name="init_z" default="0"/>
+    <arg name="low_pass_beta" default="0.05"/>
+
+    <rosparam command="load" file="$(find uwb)/cfg/uwb_id.yaml" />
+
+    <node name="uwb_bridge" pkg="uwb" type="uwb_bridge_node" output="screen">
+        <param name="self_id" type="int" value="$(arg self_id)"/>
+    </node>
+
+
+    <node name="draft_estimation" pkg="uwb" type="draft_estimation_node" output="screen">
+        <param name="self_id" type="int" value="$(arg self_id)"/>
+        <param name="self_local_odom_topic" type="string" value="/vicon_imu_ekf_odom"/>
+        <param name="init_x" type="double" value="$(arg init_x)"/>
+        <param name="init_y" type="double" value="$(arg init_y)"/>
+        <param name="init_z" type="double" value="$(arg init_z)"/>
+        <param name="low_pass_beta" type="double" value="$(arg low_pass_beta)"/>
+    </node>
+
+</launch>

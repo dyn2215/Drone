@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<launch>
+
+<group ns="robot1">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="1" />
+  </node>
+</group>
+
+<group ns="robot2">
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+    <param name = "id" value ="2" />
+  </node>
+</group>
+
+
+</launch>

@@ -1,0 +1,16 @@
+<launch>
+    <arg name="sigma_r" default="0"/>
+    <arg name="sigma_Y" default="0"/> 
+    <arg name="sigma_P" default="0"/>
+    <!-- sigma_Y and sigma_R is in degree!!!!! -->
+    <arg name="timer_duration" default="0.02"/>
+
+    <group ns="simulations">
+        <node name="uwb_sim_node" pkg="uwb" type="uwb_sim" output="screen">
+            <param name="sigma_r" type="double" value="$(arg sigma_r)"/>
+            <param name="sigma_Y" type="double" value="$(arg sigma_Y)"/>
+            <param name="sigma_P" type="double" value="$(arg sigma_P)"/>
+            <param name="timer_duration" type="double" value="$(arg timer_duration)"/>
+        </node>
+    </group>
+</launch>

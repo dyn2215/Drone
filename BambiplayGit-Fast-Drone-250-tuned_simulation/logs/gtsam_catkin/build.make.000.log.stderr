@@ -1,0 +1,39 @@
+Cloning into 'gtsam_src'...
+Note: switching to '687ae3d2511b9c296af08ec2f2e717b0627a8d68'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 687ae3d25 Merged in fix/matlab_wrapper_scalar_references (pull request #287)
+CMake Error at CMakeLists.txt:297 (find_package):
+  By not providing "Findmetis_catkin.cmake" in CMAKE_MODULE_PATH this project
+  has asked CMake to find a package configuration file provided by
+  "metis_catkin", but CMake did not find one.
+
+  Could not find a package configuration file provided by "metis_catkin" with
+  any of the following names:
+
+    metis_catkinConfig.cmake
+    metis_catkin-config.cmake
+
+  Add the installation prefix of "metis_catkin" to CMAKE_PREFIX_PATH or set
+  "metis_catkin_DIR" to a directory containing one of the above files.  If
+  "metis_catkin" provides a separate development package or SDK, be sure it
+  has been installed.
+
+
+make[2]: *** [CMakeFiles/gtsam_src.dir/build.make:108: gtsam_src-prefix/src/gtsam_src-stamp/gtsam_src-configure] Error 1
+make[1]: *** [CMakeFiles/Makefile2:304: CMakeFiles/gtsam_src.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

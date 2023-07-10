@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<launch>
+<!-- send random goal to movebase -->
+  <node pkg="random_nav_goal" type="random_nav_goal" name="random_nav_goal" output="screen">
+        <remap from="move_base_simple/goal" to="/drone_0_ego_planner_node/move_base_simple/goal"/>        
+  </node>
+</launch>

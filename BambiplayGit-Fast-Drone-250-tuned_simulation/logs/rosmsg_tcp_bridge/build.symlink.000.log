@@ -1,0 +1,4 @@
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/rosmsg_tcp_bridge/bridge_node
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/rosmsg_tcp_bridge.pc
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/rosmsg_tcp_bridge/cmake/rosmsg_tcp_bridgeConfig.cmake
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/rosmsg_tcp_bridge/cmake/rosmsg_tcp_bridgeConfig-version.cmake

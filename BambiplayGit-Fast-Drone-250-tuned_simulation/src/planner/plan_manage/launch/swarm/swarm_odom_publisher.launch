@@ -1,0 +1,8 @@
+<launch>
+ <node pkg="ego_planner" name="odom_publisher_node" type="odom_publisher_node" output="screen" >
+        <!--  launch-prefix="gdb -ex run args" -->
+        
+        <param name="/uav_num" value="3" type="int"/>
+        <!--param name="/uav_init_pos" value="[0,0,0,1,0,2]" type=""/-->
+</node>
+</launch>

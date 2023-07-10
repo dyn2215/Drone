@@ -1,0 +1,1 @@
+/usr/bin/ld: warning: libopencv_core.so.4.2, needed by /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/plan_env/lib/libplan_env.so, may conflict with libopencv_core.so.406

@@ -1,0 +1,4 @@
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/libdecomp_rviz_plugins.so
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/decomp_ros_utils.pc
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/decomp_ros_utils/cmake/decomp_ros_utilsConfig-version.cmake
+Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/decomp_ros_utils/cmake/decomp_ros_utilsConfig.cmake

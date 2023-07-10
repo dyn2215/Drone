@@ -1,0 +1,6 @@
+planner/bspline_opt
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/bspline_opt/cmake.lock /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/./cmake.lock
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/bspline_opt/lib/libbspline_opt.so /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/libbspline_opt.so
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/bspline_opt/lib/pkgconfig/bspline_opt.pc /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/bspline_opt.pc
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/bspline_opt/share/bspline_opt/cmake/bspline_optConfig.cmake /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/bspline_opt/cmake/bspline_optConfig.cmake
+/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/bspline_opt/share/bspline_opt/cmake/bspline_optConfig-version.cmake /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/bspline_opt/cmake/bspline_optConfig-version.cmake

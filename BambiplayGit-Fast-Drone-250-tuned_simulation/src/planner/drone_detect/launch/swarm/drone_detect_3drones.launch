@@ -1,0 +1,21 @@
+<launch>
+<!-- drone0 -->
+<group ns="drone0">
+<include file="/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/planner/drone_detect/launch/swarm/drone_i_detect.launch">
+            <arg name="my_id" value="0"/>
+</include>
+</group>
+
+<!-- drone1 -->
+<group ns="drone1">
+<include file="/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/planner/drone_detect/launch/swarm/drone_i_detect.launch">
+            <arg name="my_id" value="1"/>
+</include>
+</group>
+<!-- drone2 -->
+<group ns="drone2">
+<include file="/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/planner/drone_detect/launch/swarm/drone_i_detect.launch">
+            <arg name="my_id" value="2"/>
+</include>
+</group>
+</launch>
