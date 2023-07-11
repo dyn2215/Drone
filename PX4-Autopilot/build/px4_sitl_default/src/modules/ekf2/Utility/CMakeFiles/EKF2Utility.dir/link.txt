@@ -1,0 +1,2 @@
+/usr/bin/ar qc libEKF2Utility.a  CMakeFiles/EKF2Utility.dir/PreFlightChecker.cpp.o
+/usr/bin/ranlib libEKF2Utility.a

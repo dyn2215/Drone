@@ -1,0 +1,2 @@
+/usr/bin/ar qc libgeofence_breach_avoidance.a  CMakeFiles/geofence_breach_avoidance.dir/geofence_breach_avoidance.cpp.o
+/usr/bin/ranlib libgeofence_breach_avoidance.a

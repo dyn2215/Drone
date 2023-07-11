@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSimpleMixer.a  CMakeFiles/SimpleMixer.dir/SimpleMixer.cpp.o
+/usr/bin/ranlib libSimpleMixer.a

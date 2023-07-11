@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsystemcmds__motor_test.a  CMakeFiles/systemcmds__motor_test.dir/motor_test.cpp.o
+/usr/bin/ranlib libsystemcmds__motor_test.a

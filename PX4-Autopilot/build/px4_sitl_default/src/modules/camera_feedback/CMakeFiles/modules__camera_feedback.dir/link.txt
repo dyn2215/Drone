@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__camera_feedback.a  CMakeFiles/modules__camera_feedback.dir/CameraFeedback.cpp.o
+/usr/bin/ranlib libmodules__camera_feedback.a

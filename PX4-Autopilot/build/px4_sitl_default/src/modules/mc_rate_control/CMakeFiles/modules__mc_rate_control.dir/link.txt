@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__mc_rate_control.a  CMakeFiles/modules__mc_rate_control.dir/MulticopterRateControl.cpp.o
+/usr/bin/ranlib libmodules__mc_rate_control.a

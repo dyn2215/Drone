@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFlightTaskTransition.a  CMakeFiles/FlightTaskTransition.dir/FlightTaskTransition.cpp.o
+/usr/bin/ranlib libFlightTaskTransition.a

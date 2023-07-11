@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFlightTaskAutoLineSmoothVel.a  CMakeFiles/FlightTaskAutoLineSmoothVel.dir/FlightTaskAutoLineSmoothVel.cpp.o
+/usr/bin/ranlib libFlightTaskAutoLineSmoothVel.a

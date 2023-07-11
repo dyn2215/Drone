@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFlightTaskManualAcceleration.a  CMakeFiles/FlightTaskManualAcceleration.dir/FlightTaskManualAcceleration.cpp.o
+/usr/bin/ranlib libFlightTaskManualAcceleration.a

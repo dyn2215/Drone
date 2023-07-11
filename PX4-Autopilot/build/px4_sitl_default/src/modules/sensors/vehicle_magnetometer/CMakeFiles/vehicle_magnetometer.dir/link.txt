@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvehicle_magnetometer.a  CMakeFiles/vehicle_magnetometer.dir/VehicleMagnetometer.cpp.o
+/usr/bin/ranlib libvehicle_magnetometer.a

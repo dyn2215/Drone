@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdrivers__smbus.a  CMakeFiles/drivers__smbus.dir/SMBus.cpp.o
+/usr/bin/ranlib libdrivers__smbus.a

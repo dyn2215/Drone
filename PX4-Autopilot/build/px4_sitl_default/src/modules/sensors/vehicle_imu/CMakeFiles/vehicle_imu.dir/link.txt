@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvehicle_imu.a  CMakeFiles/vehicle_imu.dir/Integrator.cpp.o CMakeFiles/vehicle_imu.dir/VehicleIMU.cpp.o
+/usr/bin/ranlib libvehicle_imu.a

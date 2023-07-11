@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtecs.a  CMakeFiles/tecs.dir/TECS.cpp.o
+/usr/bin/ranlib libtecs.a

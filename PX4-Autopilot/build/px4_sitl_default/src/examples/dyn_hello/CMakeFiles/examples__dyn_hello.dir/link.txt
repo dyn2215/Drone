@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -O2 -g -DNDEBUG  -fuse-ld=gold -shared -Wl,-soname,examples__dyn_hello.px4mod -o examples__dyn_hello.px4mod CMakeFiles/examples__dyn_hello.dir/hello.cpp.o   -L/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Install/lib  -Wl,-rpath,/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Install/lib 

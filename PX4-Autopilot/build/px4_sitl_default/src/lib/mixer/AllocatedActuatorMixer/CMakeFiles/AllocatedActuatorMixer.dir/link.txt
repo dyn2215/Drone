@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAllocatedActuatorMixer.a  CMakeFiles/AllocatedActuatorMixer.dir/AllocatedActuatorMixer.cpp.o
+/usr/bin/ranlib libAllocatedActuatorMixer.a

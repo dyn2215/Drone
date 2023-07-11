@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtinybson.a  CMakeFiles/tinybson.dir/tinybson.cpp.o
+/usr/bin/ranlib libtinybson.a

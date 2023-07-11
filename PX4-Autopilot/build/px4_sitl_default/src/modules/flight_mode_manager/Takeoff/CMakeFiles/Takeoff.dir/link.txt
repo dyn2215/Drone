@@ -1,0 +1,2 @@
+/usr/bin/ar qc libTakeoff.a  CMakeFiles/Takeoff.dir/Takeoff.cpp.o
+/usr/bin/ranlib libTakeoff.a

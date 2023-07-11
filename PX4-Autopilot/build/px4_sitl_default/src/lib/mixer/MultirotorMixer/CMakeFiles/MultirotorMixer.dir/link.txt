@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMultirotorMixer.a  CMakeFiles/MultirotorMixer.dir/MultirotorMixer.cpp.o
+/usr/bin/ranlib libMultirotorMixer.a

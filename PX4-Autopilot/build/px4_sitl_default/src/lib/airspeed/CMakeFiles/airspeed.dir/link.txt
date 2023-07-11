@@ -1,0 +1,2 @@
+/usr/bin/ar qc libairspeed.a  CMakeFiles/airspeed.dir/airspeed.cpp.o
+/usr/bin/ranlib libairspeed.a

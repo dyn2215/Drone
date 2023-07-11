@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdrivers_rangefinder.a  CMakeFiles/drivers_rangefinder.dir/PX4Rangefinder.cpp.o
+/usr/bin/ranlib libdrivers_rangefinder.a

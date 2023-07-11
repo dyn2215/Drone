@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFlightTaskOffboard.a  CMakeFiles/FlightTaskOffboard.dir/FlightTaskOffboard.cpp.o
+/usr/bin/ranlib libFlightTaskOffboard.a

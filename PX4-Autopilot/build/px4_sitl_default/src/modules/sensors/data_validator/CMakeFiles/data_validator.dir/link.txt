@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdata_validator.a  CMakeFiles/data_validator.dir/DataValidator.cpp.o CMakeFiles/data_validator.dir/DataValidatorGroup.cpp.o
+/usr/bin/ranlib libdata_validator.a

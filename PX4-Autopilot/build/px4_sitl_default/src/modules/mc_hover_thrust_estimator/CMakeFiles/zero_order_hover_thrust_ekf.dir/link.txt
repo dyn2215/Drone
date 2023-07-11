@@ -1,0 +1,2 @@
+/usr/bin/ar qc libzero_order_hover_thrust_ekf.a  CMakeFiles/zero_order_hover_thrust_ekf.dir/zero_order_hover_thrust_ekf.cpp.o
+/usr/bin/ranlib libzero_order_hover_thrust_ekf.a

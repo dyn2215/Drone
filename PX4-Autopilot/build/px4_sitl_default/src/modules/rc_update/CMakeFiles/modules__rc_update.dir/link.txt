@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmodules__rc_update.a  CMakeFiles/modules__rc_update.dir/rc_update.cpp.o
+/usr/bin/ranlib libmodules__rc_update.a

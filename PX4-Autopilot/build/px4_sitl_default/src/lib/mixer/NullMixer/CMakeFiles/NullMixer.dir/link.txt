@@ -1,0 +1,2 @@
+/usr/bin/ar qc libNullMixer.a  CMakeFiles/NullMixer.dir/NullMixer.cpp.o
+/usr/bin/ranlib libNullMixer.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFlightTaskManualPositionSmoothVel.a  CMakeFiles/FlightTaskManualPositionSmoothVel.dir/FlightTaskManualPositionSmoothVel.cpp.o
+/usr/bin/ranlib libFlightTaskManualPositionSmoothVel.a

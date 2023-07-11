@@ -1,0 +1,2 @@
+/usr/bin/ar qc libtunes.a  CMakeFiles/tunes.dir/tunes.cpp.o CMakeFiles/tunes.dir/default_tunes.cpp.o
+/usr/bin/ranlib libtunes.a

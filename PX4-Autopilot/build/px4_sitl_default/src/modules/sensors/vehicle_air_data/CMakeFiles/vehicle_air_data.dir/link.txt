@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvehicle_air_data.a  CMakeFiles/vehicle_air_data.dir/VehicleAirData.cpp.o
+/usr/bin/ranlib libvehicle_air_data.a

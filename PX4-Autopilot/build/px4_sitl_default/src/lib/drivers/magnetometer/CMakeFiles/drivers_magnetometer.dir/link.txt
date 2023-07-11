@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdrivers_magnetometer.a  CMakeFiles/drivers_magnetometer.dir/PX4Magnetometer.cpp.o
+/usr/bin/ranlib libdrivers_magnetometer.a

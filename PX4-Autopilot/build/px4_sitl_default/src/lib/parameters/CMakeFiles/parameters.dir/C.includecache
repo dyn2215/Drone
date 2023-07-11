@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../../src/lib/parameters/param.h
+stdint.h
+-
+stdbool.h
+-
+sys/types.h
+-
+cstdio
+-
+
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/src/lib/parameters/px4_parameters.c
+px4_parameters.h
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/src/lib/parameters/px4_parameters.h
+
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/src/lib/parameters/px4_parameters.h
+stdint.h
+-
+parameters/param.h
+-
+

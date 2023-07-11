@@ -1,0 +1,2 @@
+/usr/bin/ar qc libFlightTask.a  CMakeFiles/FlightTask.dir/FlightTask.cpp.o
+/usr/bin/ranlib libFlightTask.a

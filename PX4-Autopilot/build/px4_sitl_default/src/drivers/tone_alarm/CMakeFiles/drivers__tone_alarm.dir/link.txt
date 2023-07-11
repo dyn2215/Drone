@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdrivers__tone_alarm.a  CMakeFiles/drivers__tone_alarm.dir/ToneAlarm.cpp.o
+/usr/bin/ranlib libdrivers__tone_alarm.a

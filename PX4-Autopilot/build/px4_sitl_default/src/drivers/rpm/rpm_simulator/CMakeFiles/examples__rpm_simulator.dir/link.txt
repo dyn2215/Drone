@@ -1,0 +1,2 @@
+/usr/bin/ar qc libexamples__rpm_simulator.a  CMakeFiles/examples__rpm_simulator.dir/rpm_simulator.cpp.o
+/usr/bin/ranlib libexamples__rpm_simulator.a

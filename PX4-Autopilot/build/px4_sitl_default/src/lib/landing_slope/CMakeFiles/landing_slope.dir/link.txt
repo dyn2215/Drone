@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblanding_slope.a  CMakeFiles/landing_slope.dir/Landingslope.cpp.o
+/usr/bin/ranlib liblanding_slope.a

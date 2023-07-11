@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMagnetometerBiasEstimator.a  CMakeFiles/MagnetometerBiasEstimator.dir/MagnetometerBiasEstimator.cpp.o
+/usr/bin/ranlib libMagnetometerBiasEstimator.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmixer_module.a  CMakeFiles/mixer_module.dir/mixer_module.cpp.o
+/usr/bin/ranlib libmixer_module.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libarch_tone_alarm.a  CMakeFiles/arch_tone_alarm.dir/ToneAlarmInterface.cpp.o
+/usr/bin/ranlib libarch_tone_alarm.a

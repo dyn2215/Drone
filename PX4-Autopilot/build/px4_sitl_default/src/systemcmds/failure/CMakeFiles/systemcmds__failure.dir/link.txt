@@ -1,0 +1,2 @@
+/usr/bin/ar qc libsystemcmds__failure.a  CMakeFiles/systemcmds__failure.dir/failure.cpp.o
+/usr/bin/ranlib libsystemcmds__failure.a

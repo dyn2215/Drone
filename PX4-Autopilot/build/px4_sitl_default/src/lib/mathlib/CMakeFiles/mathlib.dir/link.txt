@@ -1,0 +1,2 @@
+/usr/bin/ar qc libmathlib.a  CMakeFiles/mathlib.dir/math/test/test.cpp.o CMakeFiles/mathlib.dir/math/filter/LowPassFilter2p.cpp.o CMakeFiles/mathlib.dir/math/filter/LowPassFilter2pVector3f.cpp.o
+/usr/bin/ranlib libmathlib.a

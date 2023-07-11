@@ -1,0 +1,2 @@
+/usr/bin/ar qc libSlewRate.a  CMakeFiles/SlewRate.dir/dummy.cpp.o
+/usr/bin/ranlib libSlewRate.a

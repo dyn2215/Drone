@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvehicle_angular_velocity.a  CMakeFiles/vehicle_angular_velocity.dir/VehicleAngularVelocity.cpp.o
+/usr/bin/ranlib libvehicle_angular_velocity.a

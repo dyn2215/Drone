@@ -1,0 +1,2 @@
+/usr/bin/ar qc libbattery.a  CMakeFiles/battery.dir/battery.cpp.o
+/usr/bin/ranlib libbattery.a

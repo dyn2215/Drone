@@ -1,0 +1,2 @@
+/usr/bin/ar qc libArmAuthorization.a  CMakeFiles/ArmAuthorization.dir/ArmAuthorization.cpp.o
+/usr/bin/ranlib libArmAuthorization.a

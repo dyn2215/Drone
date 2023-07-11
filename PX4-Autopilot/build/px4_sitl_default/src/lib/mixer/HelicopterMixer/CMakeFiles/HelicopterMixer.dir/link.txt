@@ -1,0 +1,2 @@
+/usr/bin/ar qc libHelicopterMixer.a  CMakeFiles/HelicopterMixer.dir/HelicopterMixer.cpp.o
+/usr/bin/ranlib libHelicopterMixer.a

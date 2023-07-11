@@ -1,0 +1,2 @@
+/usr/bin/ar qc libAirspeedValidator.a  CMakeFiles/AirspeedValidator.dir/AirspeedValidator.cpp.o
+/usr/bin/ranlib libAirspeedValidator.a

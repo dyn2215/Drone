@@ -1,0 +1,2 @@
+/usr/bin/ar qc libconversion.a  CMakeFiles/conversion.dir/rotation.cpp.o
+/usr/bin/ranlib libconversion.a

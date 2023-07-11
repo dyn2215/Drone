@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvehicle_acceleration.a  CMakeFiles/vehicle_acceleration.dir/VehicleAcceleration.cpp.o
+/usr/bin/ranlib libvehicle_acceleration.a

@@ -1,0 +1,2 @@
+/usr/bin/ar qc libdrivers_barometer.a  CMakeFiles/drivers_barometer.dir/PX4Barometer.cpp.o
+/usr/bin/ranlib libdrivers_barometer.a

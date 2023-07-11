@@ -1,0 +1,2 @@
+/usr/bin/ar qc libHealthFlags.a  CMakeFiles/HealthFlags.dir/HealthFlags.cpp.o
+/usr/bin/ranlib libHealthFlags.a

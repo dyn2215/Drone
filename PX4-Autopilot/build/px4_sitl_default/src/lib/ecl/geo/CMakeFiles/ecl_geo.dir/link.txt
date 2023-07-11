@@ -1,0 +1,2 @@
+/usr/bin/ar qc libecl_geo.a  CMakeFiles/ecl_geo.dir/geo.cpp.o
+/usr/bin/ranlib libecl_geo.a

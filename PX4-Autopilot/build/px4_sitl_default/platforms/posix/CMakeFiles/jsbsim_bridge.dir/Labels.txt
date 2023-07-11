@@ -1,0 +1,13 @@
+# Target labels
+ jsbsim_bridge
+# Source files and their labels
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/platforms/posix/CMakeFiles/jsbsim_bridge
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/platforms/posix/CMakeFiles/jsbsim_bridge.rule
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/platforms/posix/CMakeFiles/jsbsim_bridge-complete.rule
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Stamp/jsbsim_bridge/jsbsim_bridge-install.rule
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Stamp/jsbsim_bridge/jsbsim_bridge-mkdir.rule
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Stamp/jsbsim_bridge/jsbsim_bridge-download.rule
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Stamp/jsbsim_bridge/jsbsim_bridge-update.rule
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Stamp/jsbsim_bridge/jsbsim_bridge-patch.rule
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Stamp/jsbsim_bridge/jsbsim_bridge-configure.rule
+/home/nics/Drone/PX4-Autopilot/build/px4_sitl_default/external/Stamp/jsbsim_bridge/jsbsim_bridge-build.rule

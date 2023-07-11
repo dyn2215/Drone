@@ -1,0 +1,2 @@
+/usr/bin/ar qc libvehicle_gps_position.a  CMakeFiles/vehicle_gps_position.dir/VehicleGPSPosition.cpp.o CMakeFiles/vehicle_gps_position.dir/gps_blending.cpp.o
+/usr/bin/ranlib libvehicle_gps_position.a
