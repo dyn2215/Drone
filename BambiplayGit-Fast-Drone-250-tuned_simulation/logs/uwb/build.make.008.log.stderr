@@ -1,0 +1,30 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:[m[K In member function ‘[01m[Kvoid DraftNode::GroundtruthCb(const OdometryConstPtr&)[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:160:48:[m[K [01;31m[Kerror: [m[Kno matching function for call to ‘[01m[Ktf2::Matrix3x3::Matrix3x3(const _orientation_type&)[m[K’
+  160 |     tf2::Matrix3x3 m(msg->pose.pose.orientation[01;31m[K)[m[K;
+      |                                                [01;31m[K^[m[K
+In file included from [01m[K/opt/ros/noetic/include/tf2/LinearMath/Transform.h:21[m[K,
+                 from [01m[K/opt/ros/noetic/include/tf2_geometry_msgs/tf2_geometry_msgs.h:37[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:13[m[K:
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Matrix3x3.h:63:23:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktf2::Matrix3x3::Matrix3x3(const tf2::Matrix3x3&)[m[K’
+   63 |  TF2SIMD_FORCE_INLINE [01;36m[KMatrix3x3[m[K (const Matrix3x3& other)
+      |                       [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Matrix3x3.h:63:51:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst _orientation_type[m[K’ {aka ‘[01m[Kconst geometry_msgs::Quaternion_<std::allocator<void> >[m[K’} to ‘[01m[Kconst tf2::Matrix3x3&[m[K’
+   63 |  TF2SIMD_FORCE_INLINE Matrix3x3 ([01;36m[Kconst Matrix3x3& other[m[K)
+      |                                  [01;36m[K~~~~~~~~~~~~~~~~~^~~~~[m[K
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Matrix3x3.h:54:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktf2::Matrix3x3::Matrix3x3(const tf2Scalar&, const tf2Scalar&, const tf2Scalar&, const tf2Scalar&, const tf2Scalar&, const tf2Scalar&, const tf2Scalar&, const tf2Scalar&, const tf2Scalar&)[m[K’
+   54 |  [01;36m[KMatrix3x3[m[K(const tf2Scalar& xx, const tf2Scalar& xy, const tf2Scalar& xz,
+      |  [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Matrix3x3.h:54:2:[m[K [01;36m[Knote: [m[K  candidate expects 9 arguments, 1 provided
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Matrix3x3.h:45:11:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktf2::Matrix3x3::Matrix3x3(const tf2::Quaternion&)[m[K’
+   45 |  explicit [01;36m[KMatrix3x3[m[K(const Quaternion& q) { setRotation(q); }
+      |           [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Matrix3x3.h:45:39:[m[K [01;36m[Knote: [m[K  no known conversion for argument 1 from ‘[01m[Kconst _orientation_type[m[K’ {aka ‘[01m[Kconst geometry_msgs::Quaternion_<std::allocator<void> >[m[K’} to ‘[01m[Kconst tf2::Quaternion&[m[K’
+   45 |  explicit Matrix3x3([01;36m[Kconst Quaternion& q[m[K) { setRotation(q); }
+      |                     [01;36m[K~~~~~~~~~~~~~~~~~~^[m[K
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Matrix3x3.h:40:2:[m[K [01;36m[Knote: [m[Kcandidate: ‘[01m[Ktf2::Matrix3x3::Matrix3x3()[m[K’
+   40 |  [01;36m[KMatrix3x3[m[K () {}
+      |  [01;36m[K^~~~~~~~~[m[K
+[01m[K/opt/ros/noetic/include/tf2/LinearMath/Matrix3x3.h:40:2:[m[K [01;36m[Knote: [m[K  candidate expects 0 arguments, 1 provided
+make[2]: *** [CMakeFiles/draft_node.dir/build.make:63: CMakeFiles/draft_node.dir/src/draft_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:214: CMakeFiles/draft_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

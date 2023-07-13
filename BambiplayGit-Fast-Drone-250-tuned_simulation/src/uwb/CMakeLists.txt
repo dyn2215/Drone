@@ -142,6 +142,7 @@ include_directories(
 # add_executable(draft_estimation_node src/draft_estimation_node.cpp)
 add_executable(draft_node src/draft_node.cpp)
 add_executable(uwb_sim src/uwb_sim.cpp)
+add_executable(playground src/playground.cpp)
 
 ## Rename C++ executable without prefix
 ## The above recommended prefix causes long target names, the following renames the
@@ -176,6 +177,10 @@ target_link_libraries(draft_node
 )
 
 target_link_libraries(uwb_sim
+        ${catkin_LIBRARIES}
+)
+
+target_link_libraries(playground
         ${catkin_LIBRARIES}
 )
 

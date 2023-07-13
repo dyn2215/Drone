@@ -1,0 +1,7 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:[m[K In constructor ‘[01m[KUwbSimNode::UwbSimNode()[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:89:25:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   89 |     uav_gt_quat[0]=tf2::[01;31m[K::[m[KtoMsg(myQuaternion);
+      |                         [01;31m[K^~[m[K
+make[2]: *** [CMakeFiles/playground.dir/build.make:63: CMakeFiles/playground.dir/src/playground.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:783: CMakeFiles/playground.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

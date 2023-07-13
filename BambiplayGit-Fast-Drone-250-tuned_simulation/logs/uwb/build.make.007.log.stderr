@@ -1,0 +1,7 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:[m[K In member function ‘[01m[Kvoid DraftNode::GroundtruthCb(const OdometryConstPtr&)[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:160:22:[m[K [01;31m[Kerror: [m[K‘[01m[Kimu_quat[m[K’ was not declared in this scope
+  160 |     tf2::Matrix3x3 m([01;31m[Kimu_quat[m[K);
+      |                      [01;31m[K^~~~~~~~[m[K
+make[2]: *** [CMakeFiles/draft_node.dir/build.make:63: CMakeFiles/draft_node.dir/src/draft_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:214: CMakeFiles/draft_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

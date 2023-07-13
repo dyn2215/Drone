@@ -9,6 +9,8 @@
 #include <geometry_msgs/PointStamped.h>
 #include <uwb_msgs/UwbResultStamped.h>
 #include <nav_msgs/Odometry.h>
+#include <tf2/LinearMath/Quaternion.h>
+#include <tf2_geometry_msgs/tf2_geometry_msgs.h>
 
 #include <random>
 #include <cmath>
@@ -21,44 +23,6 @@ double randn(double mu, double sigma)
     static std::default_random_engine e{rd()};
     static std::normal_distribution<double> norm(0, 1);
     return mu + sigma * norm(e);
-}
-
-//this function converts (yaw, pitch, roll) to quaternion, the input is in rad
-void euler2quaternion(double yaw, double pitch, double roll, double &qx, double &qy, double &qz, double &qw)
-{
-    double cy = cos(yaw * 0.5);
-    double sy = sin(yaw * 0.5);
-    double cp = cos(pitch * 0.5);
-    double sp = sin(pitch * 0.5);
-    double cr = cos(roll * 0.5);
-    double sr = sin(roll * 0.5);
-
-    qw = cy * cp * cr + sy * sp * sr;
-    qx = cy * cp * sr - sy * sp * cr;
-    qy = sy * cp * sr + cy * sp * cr;
-    qz = sy * cp * cr - cy * sp * sr;
-}
-
-//this function converts quaternion to (yaw, pitch, roll), the output is in rad
-void quaternion2euler(double qx, double qy, double qz, double qw, double &yaw, double &pitch, double &roll)
-{
-    double ysqr = qy * qy;
-
-    // roll (x-axis rotation)
-    double t0 = +2.0 * (qw * qx + qy * qz);
-    double t1 = +1.0 - 2.0 * (qx * qx + ysqr);
-    roll = atan2(t0, t1);
-
-    // pitch (y-axis rotation)
-    double t2 = +2.0 * (qw * qy - qz * qx);
-    t2 = t2 > 1.0 ? 1.0 : t2;
-    t2 = t2 < -1.0 ? -1.0 : t2;
-    pitch = asin(t2);
-
-    // yaw (z-axis rotation)
-    double t3 = +2.0 * (qw * qz + qx * qy);
-    double t4 = +1.0 - 2.0 * (ysqr + qz * qz);
-    yaw = atan2(t3, t4);
 }
 
 class DraftNode {
@@ -153,11 +117,20 @@ void DraftNode::GroundtruthCb(const nav_msgs::OdometryConstPtr &msg) {
     // add the draft in yaw
     // first, convert the groundtruth quaternion to euler
     double groundtruth_yaw, groundtruth_pitch, groundtruth_roll;
-    quaternion2euler(msg->pose.pose.orientation.x, msg->pose.pose.orientation.y, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w, groundtruth_yaw, groundtruth_pitch, groundtruth_roll);
+
+    //quaternion2euler(msg->pose.pose.orientation.x, msg->pose.pose.orientation.y, msg->pose.pose.orientation.z, msg->pose.pose.orientation.w, groundtruth_yaw, groundtruth_pitch, groundtruth_roll);
+    tf2::Quaternion gtquat;
+    tf2::convert(msg->pose.pose.orientation,gtquat);
+    tf2::Matrix3x3 m(gtquat);
+
+    m.getRPY(groundtruth_roll, groundtruth_pitch, groundtruth_yaw);//进行转换
     // then, add the draft in yaw
     groundtruth_yaw += draft_Y-init_Y;
     // finally, convert the euler to quaternion
-    euler2quaternion(groundtruth_yaw, groundtruth_pitch, groundtruth_roll, local_position_sim.pose.pose.orientation.x, local_position_sim.pose.pose.orientation.y, local_position_sim.pose.pose.orientation.z, local_position_sim.pose.pose.orientation.w);
+    // euler2quaternion(groundtruth_yaw, groundtruth_pitch, groundtruth_roll, local_position_sim.pose.pose.orientation.x, local_position_sim.pose.pose.orientation.y, local_position_sim.pose.pose.orientation.z, local_position_sim.pose.pose.orientation.w);
+    tf2::Quaternion myQuaternion;
+    myQuaternion.setRPY(groundtruth_roll, groundtruth_pitch, groundtruth_yaw);
+    local_position_sim.pose.pose.orientation=tf2::toMsg(myQuaternion);
 
     // publish local_position_sim
     local_position_pub.publish(local_position_sim);
@@ -174,8 +147,10 @@ void DraftNode::GroundtruthCb(const nav_msgs::OdometryConstPtr &msg) {
     draft_sim.child_frame_id=msg->child_frame_id;
     draft_sim.pose.pose.position.x = draft_x;
     draft_sim.pose.pose.position.y = draft_y;    
-    euler2quaternion(draft_Y, 0, 0, draft_sim.pose.pose.orientation.x, draft_sim.pose.pose.orientation.y, draft_sim.pose.pose.orientation.z, draft_sim.pose.pose.orientation.w);
-    
+    // euler2quaternion(draft_Y, 0, 0, draft_sim.pose.pose.orientation.x, draft_sim.pose.pose.orientation.y, draft_sim.pose.pose.orientation.z, draft_sim.pose.pose.orientation.w);
+    myQuaternion.setRPY(0, 0, draft_Y);
+    draft_sim.pose.pose.orientation=tf2::toMsg(myQuaternion);
+
     // publish draft_sim
     draft_sim_pub.publish(draft_sim);
 }

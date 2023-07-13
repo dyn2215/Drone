@@ -1,0 +1,8 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/uwb_sim.cpp:[m[K In member function ‘[01m[Kvoid UwbSimNode::SimMeasureCb(const ros::TimerEvent&)[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/uwb_sim.cpp:123:39:[m[K [01;31m[Kerror: [m[K‘[01m[Kuwb_sim_range[m[K’ was not declared in this scope
+  123 |         uwb_sim_result_pub[i].publish([01;31m[Kuwb_sim_range[m[K[i]);
+      |                                       [01;31m[K^~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/uwb_sim.dir/build.make:63: CMakeFiles/uwb_sim.dir/src/uwb_sim.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:187: CMakeFiles/uwb_sim.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

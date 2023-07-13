@@ -1,0 +1,8 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:[m[K In member function ‘[01m[Kvoid DraftNode::GroundtruthCb(const OdometryConstPtr&)[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:164:51:[m[K [01;31m[Kerror: [m[K‘[01m[KtoMsg[m[K’ is not a member of ‘[01m[Ktf2[m[K’
+  164 |     local_position_sim.pose.pose.orientation=tf2::[01;31m[KtoMsg[m[K(myQuaternion);
+      |                                                   [01;31m[K^~~~~[m[K
+make[2]: *** [CMakeFiles/draft_node.dir/build.make:63: CMakeFiles/draft_node.dir/src/draft_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:214: CMakeFiles/draft_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

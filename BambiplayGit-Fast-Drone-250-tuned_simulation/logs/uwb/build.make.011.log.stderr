@@ -1,0 +1,16 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:[m[K In constructor ‘[01m[KUwbSimNode::UwbSimNode()[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:80:25:[m[K [01;31m[Kerror: [m[Kexpected unqualified-id before ‘[01m[K::[m[K’ token
+   80 |     uav_gt_quat[0]=tf2::[01;31m[K::[m[KtoMsg(myQuaternion);
+      |                         [01;31m[K^~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:[m[K In member function ‘[01m[Kvoid UwbSimNode::Measureupdate()[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:117:49:[m[K [01;31m[Kerror: [m[K‘[01m[Krandn[m[K’ was not declared in this scope; did you mean ‘[01m[Krand[m[K’?
+  117 |                                                 [01;31m[Krandn[m[K(0, sigma_r);
+      |                                                 [01;31m[K^~~~~[m[K
+      |                                                 [32m[Krand[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:136:76:[m[K [01;31m[Kerror: [m[K‘[01m[Krandn[m[K’ was not declared in this scope; did you mean ‘[01m[Krand[m[K’?
+  136 |         uwb_sim_result[i].uav_Y[j] = atan2(transformed.y, transformed.x) + [01;31m[Krandn[m[K(0,sigma_Y)*M_PI/180;
+      |                                                                            [01;31m[K^~~~~[m[K
+      |                                                                            [32m[Krand[m[K
+make[2]: *** [CMakeFiles/playground.dir/build.make:63: CMakeFiles/playground.dir/src/playground.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:783: CMakeFiles/playground.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
