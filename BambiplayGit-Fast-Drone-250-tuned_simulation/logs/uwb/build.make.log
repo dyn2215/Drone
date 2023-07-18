@@ -1,6 +1,24 @@
-[35m[1mScanning dependencies of target playground[0m
-[ 16%] [32mBuilding CXX object CMakeFiles/playground.dir/src/playground.cpp.o[0m
-[ 50%] Built target uwb_sim
-[ 83%] Built target draft_node
-[100%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwb/lib/uwb/playground[0m
-[100%] Built target playground
+[35m[1mScanning dependencies of target draft_node[0m
+[ 33%] Built target playground
+[ 66%] Built target uwb_sim
+[ 83%] [32mBuilding CXX object CMakeFiles/draft_node.dir/src/draft_node.cpp.o[0m
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/base/types.h:31[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/geometry/Pose3.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:14[m[K:
+[01m[K/usr/include/tbb/task_scheduler_init.h:21:154:[m[K [01;36m[Knote: [m[K#pragma message: TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual.
+   21 | #pragma message("TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual."[01;36m[K)[m[K
+      |                                                                                                                                                          [01;36m[K^[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/geometry/Unit3.h:36[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/geometry/Rot3.h:25[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/cmake/GTSAM/../../../include/gtsam/geometry/Pose3.h:24[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:14[m[K:
+[01m[K/usr/include/tbb/mutex.h:21:140:[m[K [01;36m[Knote: [m[K#pragma message: TBB Warning: tbb/mutex.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual.
+   21 | #pragma message("TBB Warning: tbb/mutex.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual."[01;36m[K)[m[K
+      |                                                                                                                                            [01;36m[K^[m[K
+[100%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwb/lib/uwb/draft_node[0m
+[100%] Built target draft_node

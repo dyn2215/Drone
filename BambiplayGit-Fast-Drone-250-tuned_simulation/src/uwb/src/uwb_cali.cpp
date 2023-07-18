@@ -22,6 +22,7 @@ private:
     int uav_num{3}; // number of uavs
     int self_id{0}; // self id
     std::vector<std::string> global_before_name; // topic names (before calibrations)
+    std::vector<std::string> global_before_name; // topic names (before calibrations)
     std::string global_after_name; // topic name (after calibrations), only for self_id
     std::string uwb_sim_result_name;
     double sigma_r{0.3};    // in meter

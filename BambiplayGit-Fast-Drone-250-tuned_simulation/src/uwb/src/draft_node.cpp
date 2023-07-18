@@ -11,6 +11,7 @@
 #include <nav_msgs/Odometry.h>
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>
+#include <gtsam/geometry/Pose3.h>
 
 #include <random>
 #include <cmath>
