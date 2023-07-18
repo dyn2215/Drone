@@ -56,8 +56,8 @@ roslaunch rosmsg_tcp_bridge fake_swarm_bridge.launch & sleep 2;
 ./drone1.sh & sleep 5;
 ./drone2.sh & sleep 5;
 
-# start draft simulation
-roslaunch uwb draft_node.launch & sleep 1;
+# start drift simulation
+roslaunch uwb drift_node.launch & sleep 1;
 
 # start uwb simulation
 roslaunch uwb uwb_sim.launch & sleep 1;

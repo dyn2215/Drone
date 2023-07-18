@@ -11,6 +11,16 @@
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>                           
 
+// GTSAM related
+#include <gtsam/geometry/Pose2.h>
+#include <gtsam/inference/Key.h>
+#include <gtsam/slam/BetweenFactor.h>
+#include <gtsam/nonlinear/NonlinearFactorGraph.h>
+#include <gtsam/nonlinear/Values.h>
+#include <gtsam/nonlinear/LevenbergMarquardtOptimizer.h>
+#include <gtsam/nonlinear/Marginals.h>
+#include <gtsam/nonlinear/NonlinearFactor.h>  // contains NoiseModelFactorN
+
 #include <random>
 #include <cmath>
 

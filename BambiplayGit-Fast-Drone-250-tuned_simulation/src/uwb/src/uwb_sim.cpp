@@ -1,6 +1,7 @@
 // this ROS node aims to simulate the uwb measurement using White Gaussian Noise
 // input is from rostopic dronei/odom_true, output is the topic dronei/uwb_sim_range and dronei/uwb_sim_Y, dronei/uwb_sim_P, i=0,1,2
 // output is in rad and m
+// uwb_sim_result[j].uav_Y[i] means the yaw angle of uav i in the frame of uav j
 #include <ros/ros.h>
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/PointStamped.h>
@@ -97,6 +98,7 @@ UwbSimNode::UwbSimNode(){
     uav_gt_pos.resize(uav_num);
     uav_gt_quat.resize(uav_num);
     for(int i=0; i<uav_num; i++){
+        uwb_sim_result[i].self_id=i;
         uwb_sim_result[i].uav_ids.resize(uav_num);
         uwb_sim_result[i].uav_r.resize(uav_num);
         uwb_sim_result[i].uav_Y.resize(uav_num);
@@ -148,7 +150,6 @@ void UwbSimNode::Measureupdate(){
     // transform to local frame using convertCoordinate function
     for(int j=0; j<uav_num; j++){
         if(i == j){
-            uwb_sim_result[i].uav_r[j] = 0;
             continue;
         }
         geometry_msgs::Point original;
@@ -157,11 +158,11 @@ void UwbSimNode::Measureupdate(){
         original.z = uav_gt_pos[i].z - uav_gt_pos[j].z;
         geometry_msgs::Point transformed;
         // transform to local frame
-        transformed = convertCoordinate(original, uav_gt_quat[i]);
+        transformed = convertCoordinate(original, uav_gt_quat[j]);
         // yaw
-        uwb_sim_result[i].uav_Y[j] = atan2(transformed.y, transformed.x) + randn(0,sigma_Y)*M_PI/180;
+        uwb_sim_result[j].uav_Y[i] = atan2(transformed.y, transformed.x) + randn(0,sigma_Y)*M_PI/180;
         // pitch
-        uwb_sim_result[i].uav_P[j] = atan2(transformed.z, sqrt(pow(transformed.x, 2) + pow(transformed.y, 2))) + randn(0,sigma_P)*M_PI/180;
+        uwb_sim_result[j].uav_P[i] = atan2(transformed.z, sqrt(pow(transformed.x, 2) + pow(transformed.y, 2))) + randn(0,sigma_P)*M_PI/180;
     }
 }
 

@@ -144,7 +144,7 @@ include_directories(
 ## The recommended prefix ensures that target names across packages don't collide
 # add_executable(${PROJECT_NAME}_node src/uwbyujc_node.cpp)
 
-add_executable(draft_node src/draft_node.cpp)
+add_executable(drift_node src/drift_node.cpp)
 add_executable(uwb_sim src/uwb_sim.cpp)
 add_executable(playground src/playground.cpp)
 
@@ -160,7 +160,7 @@ add_executable(playground src/playground.cpp)
 # add_dependencies(${PROJECT_NAME}_node ${${PROJECT_NAME}_EXPORTED_TARGETS} ${catkin_EXPORTED_TARGETS})
 
 ## Specify libraries to link a library or executable target against
-target_link_libraries(draft_node
+target_link_libraries(drift_node
   ${catkin_LIBRARIES}
 )
 target_link_libraries(uwb_sim

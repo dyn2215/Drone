@@ -1,0 +1,43 @@
+<launch>
+
+    <arg name="sigma_xy" default="0.05"/>
+    <arg name="sigma_Y" default="2"/> 
+    <!-- sigma_Y is in degree!!!!! -->
+    <arg name="start_time" default="1000"/>
+    <arg name="timer_duration" default="0.02"/>
+
+    <group ns="simulations">
+        <group ns="drone0">
+            <node name="drift_node" pkg="uwb" type="drift_node" output="screen">
+                <param name="self_id" type="int" value="0"/>
+                <param name="sigma_x" type="double" value="$(arg sigma_xy)"/>
+                <param name="sigma_y" type="double" value="$(arg sigma_xy)"/>
+                <param name="sigma_Y" type="double" value="$(arg sigma_Y)"/>
+                <param name="start_time" type="double" value="$(arg start_time)"/>
+                <param name="timer_duration" type="double" value="$(arg timer_duration)"/>
+            </node>
+        </group>
+
+        <group ns="drone1">
+            <node name="drift_node" pkg="uwb" type="drift_node" output="screen">
+                <param name="self_id" type="int" value="1"/>
+                <param name="sigma_x" type="double" value="$(arg sigma_xy)"/>
+                <param name="sigma_y" type="double" value="$(arg sigma_xy)"/>
+                <param name="sigma_Y" type="double" value="$(arg sigma_Y)"/>
+                <param name="start_time" type="double" value="$(arg start_time)"/>
+                <param name="timer_duration" type="double" value="$(arg timer_duration)"/>
+            </node>
+        </group>
+
+        <group ns="drone2">
+            <node name="drift_node" pkg="uwb" type="drift_node" output="screen">
+                <param name="self_id" type="int" value="2"/>
+                <param name="sigma_x" type="double" value="$(arg sigma_xy)"/>
+                <param name="sigma_y" type="double" value="$(arg sigma_xy)"/>
+                <param name="sigma_Y" type="double" value="$(arg sigma_Y)"/>
+                <param name="start_time" type="double" value="$(arg start_time)"/>
+                <param name="timer_duration" type="double" value="$(arg timer_duration)"/>
+            </node>
+        </group>
+    </group>
+</launch>
