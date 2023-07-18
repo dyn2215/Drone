@@ -1,4 +1,0 @@
-[35m[1mScanning dependencies of target poscmd_2_odom[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/poscmd_2_odom.dir/src/poscmd_2_odom.cpp.o[0m
-[100%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/poscmd_2_odom/lib/poscmd_2_odom/poscmd_2_odom[0m
-[100%] Built target poscmd_2_odom

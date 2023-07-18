@@ -1,0 +1,21 @@
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:25[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose3.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwbyujc/src/draft_node.cpp:14[m[K:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/OptionalJacobian.h:22:10:[m[K [01;31m[Kfatal error: [m[KEigen/Dense: No such file or directory
+   22 | #include [01;31m[K<Eigen/Dense>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/draft_node.dir/build.make:63: CMakeFiles/draft_node.dir/src/draft_node.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:812: CMakeFiles/draft_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/usr/bin/ld: cannot find -lgtsam_catkin
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/playground.dir/build.make:84: /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/playground] Error 1
+make[1]: *** [CMakeFiles/Makefile2:164: CMakeFiles/playground.dir/all] Error 2
+/usr/bin/ld: cannot find -lgtsam_catkin
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/uwb_sim.dir/build.make:84: /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/uwb_sim] Error 1
+make[1]: *** [CMakeFiles/Makefile2:866: CMakeFiles/uwb_sim.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

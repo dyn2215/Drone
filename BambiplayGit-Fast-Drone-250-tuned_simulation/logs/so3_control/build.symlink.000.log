@@ -1,6 +1,0 @@
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/libSO3Control.so
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/libso3_control_nodelet.so
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/so3_control/control_example
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/so3_control.pc
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/so3_control/cmake/so3_controlConfig-version.cmake
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/so3_control/cmake/so3_controlConfig.cmake

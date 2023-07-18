@@ -1,0 +1,18 @@
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/types.h:31[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose3.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:14[m[K:
+[01m[K/usr/include/tbb/task_scheduler_init.h:21:154:[m[K [01;36m[Knote: [m[K#pragma message: TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual.
+   21 | #pragma message("TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual."[01;36m[K)[m[K
+      |                                                                                                                                                          [01;36m[K^[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Unit3.h:36[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Rot3.h:25[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose3.h:24[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/draft_node.cpp:14[m[K:
+[01m[K/usr/include/tbb/mutex.h:21:140:[m[K [01;36m[Knote: [m[K#pragma message: TBB Warning: tbb/mutex.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual.
+   21 | #pragma message("TBB Warning: tbb/mutex.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual."[01;36m[K)[m[K
+      |                                                                                                                                            [01;36m[K^[m[K

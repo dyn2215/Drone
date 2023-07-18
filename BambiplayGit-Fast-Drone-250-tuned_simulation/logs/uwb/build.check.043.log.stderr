@@ -1,0 +1,18 @@
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:30 (find_package):
+  By not providing "FindMETIS.cmake" in CMAKE_MODULE_PATH this project has
+  asked CMake to find a package configuration file provided by "METIS", but
+  CMake did not find one.
+
+  Could not find a package configuration file provided by "METIS" with any of
+  the following names:
+
+    METISConfig.cmake
+    metis-config.cmake
+
+  Add the installation prefix of "METIS" to CMAKE_PREFIX_PATH or set
+  "METIS_DIR" to a directory containing one of the above files.  If "METIS"
+  provides a separate development package or SDK, be sure it has been
+  installed.
+
+
+make: *** [Makefile:1038: cmake_check_build_system] Error 1

@@ -1,0 +1,6 @@
+[35m[1mScanning dependencies of target draft_node[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/draft_node.dir/src/draft_node.cpp.o[0m
+[ 50%] Built target playground
+[ 83%] Built target uwb_sim
+[100%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwb/lib/uwb/draft_node[0m
+[100%] Built target draft_node

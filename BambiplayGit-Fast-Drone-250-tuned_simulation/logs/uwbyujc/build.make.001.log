@@ -1,0 +1,26 @@
+[35m[1mScanning dependencies of target playground[0m
+[35m[1mScanning dependencies of target draft_node[0m
+[35m[1mScanning dependencies of target uwb_sim[0m
+[ 16%] [32mBuilding CXX object CMakeFiles/playground.dir/src/playground.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/draft_node.dir/src/draft_node.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/uwb_sim.dir/src/uwb_sim.cpp.o[0m
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwbyujc/src/draft_node.cpp:10:10:[m[K [01;31m[Kfatal error: [m[Kuwb_msgs/UwbResultStamped.h: No such file or directory
+   10 | #include [01;31m[K<uwb_msgs/UwbResultStamped.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwbyujc/src/uwb_sim.cpp:8:10:[m[K [01;31m[Kfatal error: [m[Kuwb_msgs/UwbResultStamped.h: No such file or directory
+    8 | #include [01;31m[K<uwb_msgs/UwbResultStamped.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwbyujc/src/playground.cpp:8:10:[m[K [01;31m[Kfatal error: [m[Kuwb_msgs/UwbResultStamped.h: No such file or directory
+    8 | #include [01;31m[K<uwb_msgs/UwbResultStamped.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/uwb_sim.dir/build.make:63: CMakeFiles/uwb_sim.dir/src/uwb_sim.cpp.o] Error 1
+make[2]: *** [CMakeFiles/draft_node.dir/build.make:63: CMakeFiles/draft_node.dir/src/draft_node.cpp.o] Error 1
+make[2]: *** [CMakeFiles/playground.dir/build.make:63: CMakeFiles/playground.dir/src/playground.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:456: CMakeFiles/playground.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make[1]: *** [CMakeFiles/Makefile2:672: CMakeFiles/uwb_sim.dir/all] Error 2
+make[1]: *** [CMakeFiles/Makefile2:213: CMakeFiles/draft_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

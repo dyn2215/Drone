@@ -1,0 +1,110 @@
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:146 (add_executable):
+  Target "playground" links to target "Boost::serialization" but the target
+  was not found.  Perhaps a find_package() call is missing for an IMPORTED
+  target, or an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:146 (add_executable):
+  Target "playground" links to target "Boost::filesystem" but the target was
+  not found.  Perhaps a find_package() call is missing for an IMPORTED
+  target, or an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:146 (add_executable):
+  Target "playground" links to target "Boost::thread" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:146 (add_executable):
+  Target "playground" links to target "Boost::date_time" but the target was
+  not found.  Perhaps a find_package() call is missing for an IMPORTED
+  target, or an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:146 (add_executable):
+  Target "playground" links to target "Boost::timer" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:146 (add_executable):
+  Target "playground" links to target "Boost::chrono" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:144 (add_executable):
+  Target "draft_node" links to target "Boost::serialization" but the target
+  was not found.  Perhaps a find_package() call is missing for an IMPORTED
+  target, or an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:144 (add_executable):
+  Target "draft_node" links to target "Boost::filesystem" but the target was
+  not found.  Perhaps a find_package() call is missing for an IMPORTED
+  target, or an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:144 (add_executable):
+  Target "draft_node" links to target "Boost::thread" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:144 (add_executable):
+  Target "draft_node" links to target "Boost::date_time" but the target was
+  not found.  Perhaps a find_package() call is missing for an IMPORTED
+  target, or an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:144 (add_executable):
+  Target "draft_node" links to target "Boost::timer" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:144 (add_executable):
+  Target "draft_node" links to target "Boost::chrono" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:145 (add_executable):
+  Target "uwb_sim" links to target "Boost::serialization" but the target was
+  not found.  Perhaps a find_package() call is missing for an IMPORTED
+  target, or an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:145 (add_executable):
+  Target "uwb_sim" links to target "Boost::filesystem" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:145 (add_executable):
+  Target "uwb_sim" links to target "Boost::thread" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:145 (add_executable):
+  Target "uwb_sim" links to target "Boost::date_time" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:145 (add_executable):
+  Target "uwb_sim" links to target "Boost::timer" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+[31m[1mCMake Error[0m at /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/CMakeLists.txt:145 (add_executable):
+  Target "uwb_sim" links to target "Boost::chrono" but the target was not
+  found.  Perhaps a find_package() call is missing for an IMPORTED target, or
+  an ALIAS target is missing?
+
+
+CMake Generate step failed.  Build files cannot be regenerated correctly.
+make: *** [Makefile:1082: cmake_check_build_system] Error 1

@@ -1,6 +1,0 @@
-[35m[1mScanning dependencies of target bspline_opt[0m
-[ 25%] [32mBuilding CXX object CMakeFiles/bspline_opt.dir/src/uniform_bspline.cpp.o[0m
-[ 50%] [32mBuilding CXX object CMakeFiles/bspline_opt.dir/src/gradient_descent_optimizer.cpp.o[0m
-[ 75%] [32mBuilding CXX object CMakeFiles/bspline_opt.dir/src/bspline_optimizer.cpp.o[0m
-[100%] [32m[1mLinking CXX shared library /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/bspline_opt/lib/libbspline_opt.so[0m
-[100%] Built target bspline_opt

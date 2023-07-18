@@ -1,0 +1,12 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/uwb_sim.cpp:13:10:[m[K [01;31m[Kfatal error: [m[Kgtsam/geometry/Pose3.h: No such file or directory
+   13 | #include [01;31m[K<gtsam/geometry/Pose3.h>[m[K
+      |          [01;31m[K^~~~~~~~~~~~~~~~~~~~~~~~[m[K
+compilation terminated.
+make[2]: *** [CMakeFiles/uwb_sim.dir/build.make:63: CMakeFiles/uwb_sim.dir/src/uwb_sim.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:187: CMakeFiles/uwb_sim.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/usr/bin/ld: cannot find -lmetis
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/draft_node.dir/build.make:113: /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwb/lib/uwb/draft_node] Error 1
+make[1]: *** [CMakeFiles/Makefile2:214: CMakeFiles/draft_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

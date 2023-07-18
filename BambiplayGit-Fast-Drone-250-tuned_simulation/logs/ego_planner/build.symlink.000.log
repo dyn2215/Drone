@@ -1,6 +1,0 @@
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/ego_planner/odom_publisher_node
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/ego_planner/ego_planner_node
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/ego_planner/traj_server
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/lib/pkgconfig/ego_planner.pc
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/ego_planner/cmake/ego_plannerConfig-version.cmake
-Symlinking /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/share/ego_planner/cmake/ego_plannerConfig.cmake

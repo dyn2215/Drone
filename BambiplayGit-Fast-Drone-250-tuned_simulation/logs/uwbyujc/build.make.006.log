@@ -1,0 +1,6 @@
+[ 16%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/playground[0m
+[ 33%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/draft_node[0m
+[ 50%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/uwb_sim[0m
+[ 66%] Built target playground
+[ 83%] Built target draft_node
+[100%] Built target uwb_sim

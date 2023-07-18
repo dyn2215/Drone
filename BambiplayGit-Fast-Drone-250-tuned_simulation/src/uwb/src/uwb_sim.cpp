@@ -63,7 +63,7 @@ private:
 
     // timer
     ros::Timer timer; // timer, in order to publish the uwb measurement at a certain frequency
-    int timer_cnt;
+    unsigned int timer_cnt=0;
 
     // variables
     // uwb测量结果,第一层为无人机id,随timer更新
@@ -88,6 +88,8 @@ UwbSimNode::UwbSimNode(){
     pnh.param<double>("sigma_Y", sigma_Y, 5);
     pnh.param<double>("sigma_P", sigma_P, 10);
 
+    std::cout << "23333" << std::endl;
+
     // initialize vectors
     groundtruth_global_name.resize(uav_num);
     uwb_sim_result_name.resize(uav_num);
@@ -110,22 +112,28 @@ UwbSimNode::UwbSimNode(){
         uwb_sim_result_pub[i] = nh.advertise<uwb_msgs::UwbResultStamped>(uwb_sim_result_name[i], 5);
     }
 
+    std::cout << "24444" << std::endl;
     timer = nh.createTimer(ros::Duration(timer_duration), &UwbSimNode::SimMeasureCb, this);
+    std::cout << "25555" << std::endl;
 }
 
 void UwbSimNode::SimMeasureCb(const ros::TimerEvent &timerEvent) {
+    std::cout << "6555" << std::endl;
     timer_cnt++;
     // update measurements
     Measureupdate();
+    std::cout << "6777" << std::endl;
     // publish measurements
     for(int i=0; i<uav_num; i++){
         uwb_sim_result_pub[i].publish(uwb_sim_result[i]);
     }
+    std::cout << "6888" << std::endl;
     return;
 }
 
 void UwbSimNode::Measureupdate(){
     // assign range, yaw, pitch measurements for each uav
+    std::cout << "10000" << std::endl;
     for(int i=0; i<uav_num; i++){
         uwb_sim_result[i].header = latest_header;
         for(int j=0; j<uav_num; j++){
@@ -144,26 +152,34 @@ void UwbSimNode::Measureupdate(){
         }
     }
 
-    int i=timer_cnt%uav_num;
+    std::cout << "10001  " << uav_num << std::endl;
+    std::cout << "timer_cnt " << timer_cnt << std::endl;
+    int i = timer_cnt % uav_num;
+    std::cout << "10001i  " << i << std::endl;
     // transform to local frame using convertCoordinate function
     for(int j=0; j<uav_num; j++){
+        std::cout << "10001jj  " << j << std::endl;
         if(i == j){
             uwb_sim_result[i].uav_r[j] = 0;
             continue;
         }
+        std::cout << "100022jj  " <<i << "  " << j << std::endl;
         geometry_msgs::Point original;
         original.x = uav_gt_pos[i].x - uav_gt_pos[j].x;
         original.y = uav_gt_pos[i].y - uav_gt_pos[j].y;
         original.z = uav_gt_pos[i].z - uav_gt_pos[j].z;
         geometry_msgs::Point transformed;
         // transform to local frame
-        transformed = convertCoordinate(original, uav_gt_quat[i]);       
+        transformed = convertCoordinate(original, uav_gt_quat[i]);
+        std::cout << "1000222  " <<  std::endl;  
         // yaw
         uwb_sim_result[i].uav_Y[j] = atan2(transformed.y, transformed.x) + randn(0,sigma_Y)*M_PI/180;
         // pitch
         uwb_sim_result[i].uav_P[j] = atan2(transformed.z, sqrt(pow(transformed.x, 2) + pow(transformed.y, 2))) + randn(0,sigma_P)*M_PI/180;
+        std::cout << "1000333  " <<  std::endl;  
     }
 
+    std::cout << "10002" << std::endl;
 }
 
 void UwbSimNode::GroundtruthCb(const nav_msgs::OdometryConstPtr &msg, int index) {
@@ -174,7 +190,10 @@ void UwbSimNode::GroundtruthCb(const nav_msgs::OdometryConstPtr &msg, int index)
 }
 
 int main(int argc, char *argv[]) {
+    std::cout << "123" << std::endl;
     ros::init(argc, argv, "uwb_sim_node");
+    std::cout << "2222" << std::endl;
     UwbSimNode node;
+    std::cout << "3333" << std::endl;
     ros::spin();
 }

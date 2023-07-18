@@ -1,0 +1,1 @@
+/usr/bin/cmake -S/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/utils/uav_utils -B/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/build/uav_utils --check-build-system CMakeFiles/Makefile.cmake 0

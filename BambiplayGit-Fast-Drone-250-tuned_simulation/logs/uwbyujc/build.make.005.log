@@ -1,0 +1,41 @@
+[35m[1mScanning dependencies of target playground[0m
+[35m[1mScanning dependencies of target uwb_sim[0m
+[35m[1mScanning dependencies of target draft_node[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/draft_node.dir/src/draft_node.cpp.o[0m
+[ 33%] [32mBuilding CXX object CMakeFiles/playground.dir/src/playground.cpp.o[0m
+[ 50%] [32mBuilding CXX object CMakeFiles/uwb_sim.dir/src/uwb_sim.cpp.o[0m
+[ 66%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/playground[0m
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/types.h:31[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose3.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwbyujc/src/draft_node.cpp:14[m[K:
+[01m[K/usr/include/tbb/task_scheduler_init.h:21:154:[m[K [01;36m[Knote: [m[K#pragma message: TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual.
+   21 | #pragma message("TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual."[01;36m[K)[m[K
+      |                                                                                                                                                          [01;36m[K^[m[K
+/usr/bin/ld: cannot find -lgtsam_catkin
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/playground.dir/build.make:84: /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/playground] Error 1
+make[1]: *** [CMakeFiles/Makefile2:164: CMakeFiles/playground.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+[ 83%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/uwb_sim[0m
+/usr/bin/ld: cannot find -lgtsam_catkin
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/uwb_sim.dir/build.make:84: /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/uwb_sim] Error 1
+make[1]: *** [CMakeFiles/Makefile2:866: CMakeFiles/uwb_sim.dir/all] Error 2
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Unit3.h:36[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Rot3.h:25[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose3.h:24[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwbyujc/src/draft_node.cpp:14[m[K:
+[01m[K/usr/include/tbb/mutex.h:21:140:[m[K [01;36m[Knote: [m[K#pragma message: TBB Warning: tbb/mutex.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual.
+   21 | #pragma message("TBB Warning: tbb/mutex.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual."[01;36m[K)[m[K
+      |                                                                                                                                            [01;36m[K^[m[K
+[100%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/draft_node[0m
+/usr/bin/ld: cannot find -lgtsam_catkin
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/draft_node.dir/build.make:84: /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwbyujc/lib/uwbyujc/draft_node] Error 1
+make[1]: *** [CMakeFiles/Makefile2:812: CMakeFiles/draft_node.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

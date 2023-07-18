@@ -1,0 +1,12 @@
+/usr/bin/ld: cannot find -lmetis
+/usr/bin/ld: cannot find -lmetis
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/draft_node.dir/build.make:113: /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwb/lib/uwb/draft_node] Error 1
+make[1]: *** [CMakeFiles/Makefile2:214: CMakeFiles/draft_node.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+/usr/bin/ld: cannot find -lmetis
+/usr/bin/ld: cannot find -lmetis
+collect2: error: ld returned 1 exit status
+make[2]: *** [CMakeFiles/uwb_sim.dir/build.make:113: /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/uwb/lib/uwb/uwb_sim] Error 1
+make[1]: *** [CMakeFiles/Makefile2:187: CMakeFiles/uwb_sim.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2
