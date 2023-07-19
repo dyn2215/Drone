@@ -1,0 +1,4 @@
+[ 25%] Built target uwb_sim
+[ 50%] Built target playground
+[ 75%] Built target drift_node
+[100%] Built target uwb_cali

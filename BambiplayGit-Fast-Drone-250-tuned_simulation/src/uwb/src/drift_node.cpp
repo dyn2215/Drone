@@ -61,7 +61,7 @@ private:
     nav_msgs::Odometry drift_sim; // 漂移的模拟值
     nav_msgs::Odometry local_odom_sim; // 模拟（真实值+漂移）
     nav_msgs::Odometry global_odom_sim; // 模拟（真实值+漂移）
-    double drift_x, drift_y, drift_Y; // 漂移的模拟值的x,y,yaw,引入此变量是由于geometry_msgs::Point中不采用欧拉角，而是采用四元数
+    double drift_x{0}, drift_y{0}, drift_Y{0}; // 漂移的模拟值的x,y,yaw,引入此变量是由于geometry_msgs::Point中不采用欧拉角，而是采用四元数
     std::vector<float> uavInitPos_; //初始无人机位姿,为[0x,0y,1x,1y,2x,2y,0Y,1Y,2Y]
 
     // callbacks

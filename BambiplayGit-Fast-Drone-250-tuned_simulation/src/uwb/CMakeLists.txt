@@ -146,6 +146,7 @@ include_directories(
 
 add_executable(drift_node src/drift_node.cpp)
 add_executable(uwb_sim src/uwb_sim.cpp)
+add_executable(uwb_cali src/uwb_cali.cpp)
 add_executable(playground src/playground.cpp)
 
 
@@ -167,6 +168,9 @@ target_link_libraries(uwb_sim
   ${catkin_LIBRARIES}
 )
 target_link_libraries(playground
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(uwb_cali
   ${catkin_LIBRARIES}
 )
 #############

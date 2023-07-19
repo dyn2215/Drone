@@ -1,0 +1,20 @@
+[  0%] Built target geometry_msgs_generate_messages_nodejs
+[  0%] Built target std_msgs_generate_messages_nodejs
+[  0%] Built target geometry_msgs_generate_messages_cpp
+[  0%] Built target geometry_msgs_generate_messages_eus
+[  0%] Built target std_msgs_generate_messages_cpp
+[  0%] Built target std_msgs_generate_messages_py
+[  0%] Built target std_msgs_generate_messages_eus
+[  0%] Built target geometry_msgs_generate_messages_lisp
+[  0%] Built target std_msgs_generate_messages_lisp
+[  0%] Built target geometry_msgs_generate_messages_py
+[ 15%] Built target traj_utils
+[ 15%] Built target _traj_utils_generate_messages_check_deps_DataDisp
+[ 15%] Built target _traj_utils_generate_messages_check_deps_MultiBsplines
+[ 15%] Built target _traj_utils_generate_messages_check_deps_Bspline
+[ 35%] Built target traj_utils_generate_messages_eus
+[ 50%] Built target traj_utils_generate_messages_nodejs
+[ 65%] Built target traj_utils_generate_messages_lisp
+[ 85%] Built target traj_utils_generate_messages_py
+[100%] Built target traj_utils_generate_messages_cpp
+[100%] Built target traj_utils_generate_messages

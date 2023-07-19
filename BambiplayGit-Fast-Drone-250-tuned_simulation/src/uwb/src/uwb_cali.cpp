@@ -25,7 +25,7 @@
 #include <gtsam/nonlinear/Values.h>
 #include <gtsam/nonlinear/LevenbergMarquardtOptimizer.h>
 #include <gtsam/nonlinear/Marginals.h>
-#include <gtsam/nonlinear/NonlinearFactor.h>  // contains NoiseModelFactorN
+#include <gtsam/nonlinear/NonlinearFactor.h>  // contprior_noise_factorains NoiseModelFactorN
 
 //  C++ related
 #include <random>
@@ -52,18 +52,23 @@ private:
     ros::NodeHandle nh, pnh{"~"};
 
     //configs
+    unsigned int protective_counter{0};
+    unsigned int protective_count{100*2};
     int uav_num{3}; // number of uavs
     int self_id{0}; // self id
     double sigma_r{0.3};    // measurement noise, in meter
     double sigma_Y{5};    // measurement noise, in degree
     double sigma_P{10};    // measurement noise, in degree
+    double walk_sigma_x, walk_sigma_y, walk_sigma_Y; // random walk noise, in meter
 
     std::string odom_name_before; //corresponding topic name (before calibration)
+    std::string uwb_measurements_name;  // corresponding topic name
     std::vector<std::string> odom_names_after; // topic names (after calibrations)
 
     //subscribers and publishers
     std::vector<ros::Subscriber> odom_after_subs;   // subscribers for odometries after calibration
     ros::Subscriber odom_before_sub;    // subscriber for odometry before calibration
+    ros::Subscriber uwb_result_sub; // subscriber for uwb measurements
     ros::Publisher odom_after_pub;  // publisher for odometry after calibration
     
     // variables
@@ -76,7 +81,7 @@ private:
     // callbacks
     void OdomAfterCb(const nav_msgs::OdometryConstPtr &msg, int uav_id);    // callback for odometries after calibration
     void OdomBeforeCb(const nav_msgs::OdometryConstPtr &msg);   // callback for odometry before calibration
-    void UwbResultCb(const const uwb_msgs::UwbResultStampedConstPtr &msg);   // callback for uwb measurements
+    void UwbResultCb(const uwb_msgs::UwbResultStampedConstPtr &msg);   // callback for uwb measurements
     void UpdateOdom();  // update odometry after calibration
     void UpdateDrift(); // update drift estimation using GTSAM
 public:
@@ -84,8 +89,13 @@ public:
 };
 
 UwbCaliNode::UwbCaliNode(){
+    cout<<"uwb cali node starting"<<endl;
     nh.param<int>("/uav_num", uav_num, 3);
+
     pnh.param<int>("self_id", self_id, 0);
+    pnh.param<double>("walk_sigma_x", walk_sigma_x, 0.05);
+    pnh.param<double>("walk_sigma_y", walk_sigma_y, 0.05);
+    pnh.param<double>("walk_sigma_Y", walk_sigma_Y, 2);  // in degree
     pnh.param<double>("sigma_r", sigma_r, 0.1);
     pnh.param<double>("sigma_Y", sigma_Y, 5);
     pnh.param<double>("sigma_P", sigma_P, 10);
@@ -94,6 +104,7 @@ UwbCaliNode::UwbCaliNode(){
 
     // initialize vectors
     odom_name_before= "/drone" + std::to_string(self_id) + "/global_odom_sim";
+    uwb_measurements_name = "/drone" + std::to_string(self_id) + "/uwb_sim_result";
     odom_names_after.resize(uav_num);
     odom_after_subs.resize(uav_num);
     odoms_after.resize(uav_num);
@@ -105,7 +116,9 @@ UwbCaliNode::UwbCaliNode(){
     }
 
     odom_before_sub = nh.subscribe<nav_msgs::Odometry>(odom_name_before, 5, &UwbCaliNode::OdomBeforeCb, this);
+    uwb_result_sub = nh.subscribe<uwb_msgs::UwbResultStamped>(uwb_measurements_name, 5, &UwbCaliNode::UwbResultCb, this);
     odom_after_pub = nh.advertise<nav_msgs::Odometry>(odom_names_after[self_id], 5);
+    cout<<"uwb cali node has started"<<endl;
 }
 
 void UwbCaliNode::OdomAfterCb(const nav_msgs::OdometryConstPtr &msg, int uav_id){
@@ -122,16 +135,19 @@ void UwbCaliNode::OdomBeforeCb(const nav_msgs::OdometryConstPtr &msg){
 
 void UwbCaliNode::UwbResultCb(const uwb_msgs::UwbResultStampedConstPtr &msg){
     uwb_measurements = *msg;
+    if(protective_counter<protective_count){
+        protective_counter++;
+        return;
+    }
     // update drift correction
     UpdateDrift();
     return;
 }
 
 void UwbCaliNode::UpdateOdom(){
-    nav_msgs::Odometry odom_temp;   // in order to maintain continuity of odoms_after[self_id]
+    nav_msgs::Odometry odom_temp = odom_before;   // in order to maintain continuity of odoms_after[self_id]
     double odom_RPY_temp[3]={0,0,0};    // in order to maintain continuity of odoms_after[self_id]
-    // update odometry after calibration
-    odom_temp = odom_before;
+    // update odometry after calibrationprior_noise_factor
     odom_temp.pose.pose.position.x += driftcorrection.x;
     odom_temp.pose.pose.position.y += driftcorrection.y;
     // convert to RPY
@@ -156,10 +172,11 @@ void UwbCaliNode::UpdateOdom(){
 // update drift estimation using GTSAM
 void UwbCaliNode::UpdateDrift(){    
     // self pose before calibration
-    double self_xyz_before[3]={odoms_after[self_id].pose.pose.position.x,
+    double self_xyz_now[3]={odoms_after[self_id].pose.pose.position.x,
     odoms_after[self_id].pose.pose.position.y,odoms_after[self_id].pose.pose.position.z};
     double self_RPY_before[3]={odom_after_RPY[0],odom_after_RPY[1],odom_after_RPY[2]};
-    double prior_noise_xyY[3]={0,0,0};  // needs to be tuned
+    double prior_noise_factor= sqrt(1);
+    double prior_noise_xyY[3]={walk_sigma_x*prior_noise_factor,walk_sigma_y*prior_noise_factor,walk_sigma_Y*prior_noise_factor};  // needs to be tuned
 
     // noise models
     double rangenoise=sigma_r;
@@ -170,7 +187,7 @@ void UwbCaliNode::UpdateDrift(){
     noiseModel::Diagonal::shared_ptr ynmodel = noiseModel::Diagonal::Sigmas(Vector1(yawnoise));
     
     NonlinearFactorGraph graph;
-    Pose2 priorMean(self_xyz_before[0], self_xyz_before[1], self_RPY_before[2]);
+    Pose2 priorMean(self_xyz_now[0], self_xyz_now[1], self_RPY_before[2]);
     noiseModel::Diagonal::shared_ptr priorNoise = noiseModel::Diagonal::Sigmas(Vector3(prior_noise_xyY[0], prior_noise_xyY[1], prior_noise_xyY[2]));
     graph.add(PriorFactor<Pose2>(1, priorMean, priorNoise));
 
@@ -182,9 +199,9 @@ void UwbCaliNode::UpdateDrift(){
         double uwb_range = uwb_measurements.uav_r[i];
         double uwb_P = uwb_measurements.uav_P[i];
         double uwb_Y = uwb_measurements.uav_Y[i];
-        graph.add(RangeFactor(1, uwb_range, other_xyz[0], other_xyz[1], other_xyz[2], rnmodel));
-        graph.add(ElevFactor(1, uwb_P, other_xyz[0], other_xyz[1], other_xyz[2], enmodel));
-        graph.add(YawFactor(1, uwb_Y, other_xyz[0], other_xyz[1], other_xyz[2], ynmodel));
+        graph.add(RangeFactor(1, uwb_range, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], rnmodel));
+        graph.add(ElevFactor(1, uwb_P, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], enmodel));
+        graph.add(YawFactor(1, uwb_Y, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], ynmodel));
     }
     // graph.print("Factor Graph:\n");
 

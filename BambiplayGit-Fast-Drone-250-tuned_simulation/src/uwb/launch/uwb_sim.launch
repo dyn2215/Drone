@@ -1,7 +1,7 @@
 <launch>
-    <arg name="sigma_r" default="0"/>
-    <arg name="sigma_Y" default="0"/> 
-    <arg name="sigma_P" default="0"/>
+    <arg name="sigma_r" default="0.00002"/>
+    <arg name="sigma_Y" default="0.00002"/> 
+    <arg name="sigma_P" default="10"/>
     <!-- sigma_Y and sigma_R is in degree!!!!! -->
     <arg name="timer_duration" default="0.02"/>
 

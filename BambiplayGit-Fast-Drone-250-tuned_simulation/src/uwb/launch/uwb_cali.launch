@@ -1,0 +1,19 @@
+<launch>
+    <group ns="drone0">
+        <node name="uwb_cali_node" pkg="uwb" type="uwb_cali" output="screen">
+            <param name="self_id" type="int" value="0"/>
+        </node>
+    </group>
+
+    <group ns="drone1">
+        <node name="uwb_cali_node" pkg="uwb" type="uwb_cali" output="screen">
+            <param name="self_id" type="int" value="1"/>
+        </node>
+    </group>
+
+    <group ns="drone2">
+        <node name="uwb_cali_node" pkg="uwb" type="uwb_cali" output="screen">
+            <param name="self_id" type="int" value="2"/>
+        </node>
+    </group>
+</launch>
