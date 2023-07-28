@@ -7,7 +7,7 @@
     <remap from="position_cmd" to="drone_$(arg drone_id)_planning/pos_cmd"/>
     <remap from="planning/bspline" to="drone_$(arg drone_id)_planning/bspline"/>
     <!--remap from="~my_odom" to="/vins_fusion/imu_propagate"/-->
-    <remap from="~my_odom" to="drone$(arg drone_id)/odom_true"/>
+    <remap from="~my_odom" to="drone$(arg drone_id)/global_odom_cali"/>
     <param name="next_drone_ip" value="127.0.0.1" type="string"/>
     <param name="broadcast_ip" value="255.255.255.255" type="string"/>
     <param name="drone_id" value="$(arg drone_id)"/>

@@ -1,3 +1,0 @@
-[ 50%] Built target traj_server
-[ 50%] Built target odom_publisher_node
-[100%] Built target ego_planner_node

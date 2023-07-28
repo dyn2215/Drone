@@ -6,7 +6,7 @@
 	<node pkg="px4ctrl" type="px4ctrl_node" name="$(arg node_name)" output="screen">
         	<!-- <remap from="~odom" to="/vicon_imu_ekf_odom" /> -->
 			
-			<remap from="~odom" to="/$(arg drone_name)/odom_true" />
+			<remap from="~odom" to="/$(arg drone_name)/global_odom_cali" />
 
 		<remap from="~cmd" to="/$(arg drone_name)/position_cmd" />
 		<remap from="/mavros/state" to="/$(arg drone_name)/mavros/state" />

@@ -12,8 +12,6 @@
 #include <tf2/LinearMath/Quaternion.h>
 #include <tf2_geometry_msgs/tf2_geometry_msgs.h>                           
 
-
-
 #include <random>
 #include <cmath>
 
@@ -51,6 +49,8 @@ private:
 
     //configs
     int uav_num{3};
+    int bs_num{0};
+    int uwb_num{3};
     std::vector<std::string> groundtruth_global_name;
     std::vector<std::string> uwb_sim_result_name;
     double timer_duration{0.01};    // 100 Hz
@@ -69,9 +69,9 @@ private:
     // variables
     // uwb测量结果,第一层为无人机id,随timer更新
     std::vector<uwb_msgs::UwbResultStamped> uwb_sim_result;
-    // 存储无人机gt位置的一维数组,随odom_true话题更新
-    std::vector<geometry_msgs::Point> uav_gt_pos;
-    std::vector<geometry_msgs::Quaternion> uav_gt_quat;
+    // 存储无人机与基站gt位置的一维数组,随odom_true话题更新
+    std::vector<geometry_msgs::Point> uwb_gt_pos;
+    std::vector<geometry_msgs::Quaternion> uwb_gt_quat;
     std_msgs::Header latest_header; // latest header of the groundtruth_global topic
 
     // callbacks
@@ -84,6 +84,9 @@ public:
 
 UwbSimNode::UwbSimNode(){
     nh.param<int>("/uav_num", uav_num, 3);
+    nh.param<int>("/bs_num", bs_num, 0);
+    uwb_num=uav_num+bs_num;
+
     pnh.param<double>("timer_duration", timer_duration, 0.01);
     pnh.param<double>("sigma_r", sigma_r, 0.1);
     pnh.param<double>("sigma_Y", sigma_Y, 5);
@@ -91,18 +94,18 @@ UwbSimNode::UwbSimNode(){
 
     // initialize vectors
     groundtruth_global_name.resize(uav_num);
-    uwb_sim_result_name.resize(uav_num);
+    uwb_sim_result_name.resize(uwb_num);
     groundtruth_global_sub.resize(uav_num);
-    uwb_sim_result_pub.resize(uav_num);
-    uwb_sim_result.resize(uav_num);
-    uav_gt_pos.resize(uav_num);
-    uav_gt_quat.resize(uav_num);
+    uwb_sim_result_pub.resize(uwb_num);
+    uwb_sim_result.resize(uwb_num);
+    uwb_gt_pos.resize(uwb_num);
+    uwb_gt_quat.resize(uwb_num);
     for(int i=0; i<uav_num; i++){
         uwb_sim_result[i].self_id=i;
-        uwb_sim_result[i].uav_ids.resize(uav_num);
-        uwb_sim_result[i].uav_r.resize(uav_num);
-        uwb_sim_result[i].uav_Y.resize(uav_num);
-        uwb_sim_result[i].uav_P.resize(uav_num);
+        uwb_sim_result[i].uwb_ids.resize(uwb_num);
+        uwb_sim_result[i].uwb_r.resize(uwb_num);
+        uwb_sim_result[i].uwb_Y.resize(uwb_num);
+        uwb_sim_result[i].uwb_P.resize(uwb_num);
         // initialize topic names
         groundtruth_global_name[i] = "/drone" + std::to_string(i) + "/odom_true";
         uwb_sim_result_name[i] = "/drone" + std::to_string(i) + "/uwb_sim_result";
@@ -111,71 +114,103 @@ UwbSimNode::UwbSimNode(){
         // publish uwb_sim_range and uwb_sim_Y, uwb_sim_P
         uwb_sim_result_pub[i] = nh.advertise<uwb_msgs::UwbResultStamped>(uwb_sim_result_name[i], 5);
     }
+    for(int i=uav_num; i<uwb_num; i++){
+        uwb_sim_result[i].self_id=i;
+        uwb_sim_result[i].uwb_ids.resize(uwb_num);
+        uwb_sim_result[i].uwb_r.resize(uwb_num);
+        uwb_sim_result[i].uwb_Y.resize(uwb_num);
+        uwb_sim_result[i].uwb_P.resize(uwb_num);
+        // initialize topic names
+        uwb_sim_result_name[i] = "/bs" + std::to_string(i-uav_num) + "/uwb_sim_result";
+        // publish uwb_sim_range and uwb_sim_Y, uwb_sim_P
+        uwb_sim_result_pub[i] = nh.advertise<uwb_msgs::UwbResultStamped>(uwb_sim_result_name[i], 5);
+    }
+
+    // initialise poses for base station(s), which are stationary
+    for(int i=0; i<bs_num; i++){
+        nh.param<double>("/bs"+std::to_string(i)+"_x", uwb_gt_pos[uav_num+i].x, 0.0);
+        nh.param<double>("/bs"+std::to_string(i)+"_y", uwb_gt_pos[uav_num+i].y, 0.0);
+        nh.param<double>("/bs"+std::to_string(i)+"_z", uwb_gt_pos[uav_num+i].z, 0.0);
+        double R,P,Y;
+        nh.param<double>("/bs"+std::to_string(i)+"_R", R, 0.0);
+        nh.param<double>("/bs"+std::to_string(i)+"_P", P, 0.0);
+        nh.param<double>("/bs"+std::to_string(i)+"_Y", Y, 0.0);
+        tf2::Quaternion myQuaternion;
+        myQuaternion.setRPY(R, P, Y);
+        uwb_gt_quat[uav_num+i]=tf2::toMsg(myQuaternion);
+    }
 
     timer = nh.createTimer(ros::Duration(timer_duration), &UwbSimNode::SimMeasureCb, this);
 }
 
 void UwbSimNode::SimMeasureCb(const ros::TimerEvent &timerEvent) {
+    // std::cout<<"SimMeasureCb init"<<std::endl;
     timer_cnt++;
     // update measurements
     Measureupdate();
     // publish measurements
-    for(int i=0; i<uav_num; i++){
+    for(int i=0; i<uwb_num; i++){
         uwb_sim_result_pub[i].publish(uwb_sim_result[i]);
     }
+    // std::cout<<"SimMeasureCb done"<<std::endl;
     return;
 }
 
 void UwbSimNode::Measureupdate(){
     // assign range, yaw, pitch measurements for each uav
-    for(int i=0; i<uav_num; i++){
+    for(int i=0; i<uwb_num; i++){
         uwb_sim_result[i].header = latest_header;
-        for(int j=0; j<uav_num; j++){
-            uwb_sim_result[i].uav_ids[j] = j;
+        for(int j=0; j<uwb_num; j++){
+            uwb_sim_result[i].uwb_ids[j] = j;
             if(i == j){
-                uwb_sim_result[i].uav_r[j] = 0;
-                uwb_sim_result[i].uav_Y[j] = 0;
-                uwb_sim_result[i].uav_P[j] = 0;
+                uwb_sim_result[i].uwb_r[j] = 0;
+                uwb_sim_result[i].uwb_Y[j] = 0;
+                uwb_sim_result[i].uwb_P[j] = 0;
                 continue;
             }
             // range
-            uwb_sim_result[i].uav_r[j] = sqrt(pow(uav_gt_pos[i].x - uav_gt_pos[j].x, 2) + 
-                                                pow(uav_gt_pos[i].y - uav_gt_pos[j].y, 2) + 
-                                                pow(uav_gt_pos[i].z - uav_gt_pos[j].z, 2)) + 
+            uwb_sim_result[i].uwb_r[j] = sqrt(pow(uwb_gt_pos[i].x - uwb_gt_pos[j].x, 2) + 
+                                                pow(uwb_gt_pos[i].y - uwb_gt_pos[j].y, 2) + 
+                                                pow(uwb_gt_pos[i].z - uwb_gt_pos[j].z, 2)) + 
                                                 randn(0, sigma_r);
         }
     }
 
-    int i = timer_cnt % uav_num;
+    int i = timer_cnt % uwb_num;
     // transform to local frame using convertCoordinate function
-    for(int j=0; j<uav_num; j++){
+    for(int j=0; j<uwb_num; j++){
         if(i == j){
             continue;
         }
         geometry_msgs::Point original;
-        original.x = uav_gt_pos[i].x - uav_gt_pos[j].x;
-        original.y = uav_gt_pos[i].y - uav_gt_pos[j].y;
-        original.z = uav_gt_pos[i].z - uav_gt_pos[j].z;
+        original.x = uwb_gt_pos[i].x - uwb_gt_pos[j].x;
+        original.y = uwb_gt_pos[i].y - uwb_gt_pos[j].y;
+        original.z = uwb_gt_pos[i].z - uwb_gt_pos[j].z;
+        // if(i ==uwb_num-1){
+        //     std::cout<<"for bs, original: "<<original<<std::endl;
+        // }
         geometry_msgs::Point transformed;
         // transform to local frame
-        transformed = convertCoordinate(original, uav_gt_quat[j]);
+        transformed = convertCoordinate(original, uwb_gt_quat[j]);
         // yaw
-        uwb_sim_result[j].uav_Y[i] = atan2(transformed.y, transformed.x) + randn(0,sigma_Y)*M_PI/180;
+        uwb_sim_result[j].uwb_Y[i] = atan2(transformed.y, transformed.x) + randn(0,sigma_Y)*M_PI/180;
         // pitch
-        uwb_sim_result[j].uav_P[i] = atan2(transformed.z, sqrt(pow(transformed.x, 2) + pow(transformed.y, 2))) + randn(0,sigma_P)*M_PI/180;
+        uwb_sim_result[j].uwb_P[i] = atan2(transformed.z, sqrt(pow(transformed.x, 2) + pow(transformed.y, 2))) + randn(0,sigma_P)*M_PI/180;
     }
 }
 
 void UwbSimNode::GroundtruthCb(const nav_msgs::OdometryConstPtr &msg, int index) {
-    uav_gt_pos[index] = msg->pose.pose.position;
-    uav_gt_quat[index] = msg->pose.pose.orientation;    
+    // std::cout<<"GroundtruthCb init"<<std::endl;
+    uwb_gt_pos[index] = msg->pose.pose.position;
+    uwb_gt_quat[index] = msg->pose.pose.orientation;    
     latest_header = msg->header;
+    // std::cout<<"GroundtruthCb done"<<std::endl;
     return;
 }
 
 int main(int argc, char *argv[]) {
     ros::init(argc, argv, "uwb_sim_node");
     UwbSimNode node;
-    std::cout << "uwb_sim_node started!" << std::endl;
+    // std::cout << "uwb_sim_node started!" << std::endl;
     ros::spin();
 }

@@ -1,6 +1,6 @@
 std_msgs/Header header
 int32 self_id
-int32[] uav_ids
-float32[] uav_r
-float32[] uav_Y
-float32[] uav_P
+int32[] uwb_ids
+float32[] uwb_r
+float32[] uwb_Y
+float32[] uwb_P

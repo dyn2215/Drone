@@ -1,18 +1,36 @@
 <launch>
     <!-- uwb_sim -->
-    <arg name="sigma_r" default="0.00002"/>
-    <arg name="sigma_Y" default="0.00002"/> 
+    <arg name="sigma_r" default="0.3"/>
+    <arg name="sigma_Y" default="5"/> 
     <arg name="sigma_P" default="10"/>
     <!-- sigma_Y and sigma_R is in degree!!!!! -->
-    <arg name="timer_duration" default="0.02"/>
+    <arg name="uwb_period" default="0.01"/>
 
     <!-- drift_node -->
     <arg name="walk_sigma_xy" default="0.1"/>
     <arg name="walk_sigma_Y" default="3"/> 
     <!-- walk_sigma_Y is in degree!!!!! -->
     <arg name="start_time_drift" default="30"/>
-    <arg name="timer_duration_drift" default="0.02"/>
+    <arg name="timer_duration_drift" default="0.01"/>
 
+    <!-- base station number -->
+    <param name="uav_num" type="int" value="3"/>
+    <param name="bs_num" type="int" value="2"/>
+    <param name="bs0_x" type="double" value="5"/>
+    <param name="bs0_y" type="double" value="-1"/>
+    <param name="bs0_z" type="double" value="0"/>
+    <param name="bs0_R" type="double" value="0"/>
+    <param name="bs0_P" type="double" value="0"/>
+    <param name="bs0_Y" type="double" value="0"/>
+
+    <param name="bs1_x" type="double" value="5"/>
+    <param name="bs1_y" type="double" value="3"/>
+    <param name="bs1_z" type="double" value="0"/>
+    <param name="bs1_R" type="double" value="0"/>
+    <param name="bs1_P" type="double" value="0"/>
+    <param name="bs1_Y" type="double" value="0"/>
+
+    
     <!-- uwb_cali,IMPORTANT: MUST BE AHEAD OF UWB SIM -->
     <group ns="drone0">
         <node name="uwb_cali_node" pkg="uwb" type="uwb_cali" output="screen">
@@ -56,11 +74,11 @@
             <param name="sigma_r" type="double" value="$(arg sigma_r)"/>
             <param name="sigma_Y" type="double" value="$(arg sigma_Y)"/>
             <param name="sigma_P" type="double" value="$(arg sigma_P)"/>
-            <param name="timer_duration" type="double" value="$(arg timer_duration)"/>
+            <param name="timer_duration" type="double" value="$(arg uwb_period)"/>
         </node>
     </group>
 
-    <!-- uwb_drift -->
+    <!-- drift -->
     <group ns="simulations">
         <group ns="drone0">
             <node name="drift_node" pkg="uwb" type="drift_node" output="screen">
@@ -96,4 +114,13 @@
         </group>
     </group>
 
+    <!-- target publication node -->
+    <node name="target_pub_node" pkg="uwb" type="target_pub" output="screen"></node>
+
+    <!-- statistics -->
+    <group ns="simulations">
+        <node name="statistic_cal_node" pkg="uwb" type="statistic_cal" output="screen">
+            <param name="timer_duration" type="double" value="0.01"/>
+        </node>
+    </group>
 </launch>

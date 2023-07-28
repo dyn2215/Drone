@@ -1,0 +1,10 @@
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/target_pub.cpp:[m[K In constructor ‘[01m[KTargetPubNode::TargetPubNode()[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/target_pub.cpp:53:83:[m[K [01;31m[Kerror: [m[Kinvalid use of non-static member function ‘[01m[Kvoid TargetPubNode::show_msg_callback(const ConstPtr&)[m[K’
+   53 |     signal_subscriber = nh.subscribe<std_msgs::String>("/start",10,[01;31m[KTargetPubNode::show_msg_callback[m[K);
+      |                                                                    [01;31m[K~~~~~~~~~~~~~~~^~~~~~~~~~~~~~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/target_pub.cpp:26:10:[m[K [01;36m[Knote: [m[Kdeclared here
+   26 |     void [01;36m[Kshow_msg_callback[m[K(const std_msgs::String::ConstPtr& msg);
+      |          [01;36m[K^~~~~~~~~~~~~~~~~[m[K
+make[2]: *** [CMakeFiles/target_pub.dir/build.make:63: CMakeFiles/target_pub.dir/src/target_pub.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:922: CMakeFiles/target_pub.dir/all] Error 2
+make: *** [Makefile:141: all] Error 2

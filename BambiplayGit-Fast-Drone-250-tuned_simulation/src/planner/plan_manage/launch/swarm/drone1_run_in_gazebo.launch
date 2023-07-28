@@ -7,7 +7,7 @@
     <arg name="map_size_x" value="100"/>
     <arg name="map_size_y" value="50"/>
     <arg name="map_size_z" value="3.0"/>
-    <arg name="odom_topic" value="$(arg drone_name)/odom_true"/>
+    <arg name="odom_topic" value="$(arg drone_name)/global_odom_cali"/>
     
     <!-- link world and drone_i/map -->
     <!--node pkg="tf" type="static_transform_publisher" name="world_$(arg drone_name)map_broadcaster" args="$(arg init_pos) /world $(arg drone_name)/map 100" /-->

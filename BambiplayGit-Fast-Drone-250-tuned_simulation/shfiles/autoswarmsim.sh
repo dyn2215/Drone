@@ -2,12 +2,12 @@ source ~/.bashrc & sleep 1;
 
 # decide the mean and stddev for the Gaussian distribution
 # x,y stddev in meter
-stddevx=0.05
-stddevy=0.05
+stddevx=0.1
+stddevy=0.1
 
 # yaw, in degree
 meanY=0.0
-stddevYdeg=5.0
+stddevYdeg=10.0
 stddevY=$stddevYdeg*3.1415926/180.0
 
 # Generate a random number from a Gaussian distribution with mean and stddev
@@ -60,3 +60,9 @@ roslaunch rosmsg_tcp_bridge fake_swarm_bridge.launch & sleep 2;
 roslaunch uwb uwb_launch_all.launch & sleep 3;
 
 roslaunch ego_planner rviz.launch & sleep 2;
+
+# sleep 20;
+# rostopic pub -1 /drone_0_ego_planner_node/move_base_simple/goal geometry_msgs/PoseStamped ‘{header:{stamp:now, frame_id:"world"}, pose:{position:{x:25.0, y:2.0, z:0.0}, orientation:{x:0.0, y:0.0, z:0.0, w:1.0}}}’
+# rostopic pub -1 /drone_1_ego_planner_node/move_base_simple/goal geometry_msgs/PoseStamped ‘{header:{stamp:now, frame_id:"world"}, pose:{position:{x:25.0, y:1.0, z:0.0}, orientation:{x:0.0, y:0.0, z:0.0, w:1.0}}}’
+# rostopic pub -1 /drone_2_ego_planner_node/move_base_simple/goal geometry_msgs/PoseStamped ‘{header:{stamp:now, frame_id:"world"}, pose:{position:{x:25.0, y:0.0, z:0.0}, orientation:{x:0.0, y:0.0, z:0.0, w:1.0}}}’
+# rostopic pub --once /start std_msgs/String "go"

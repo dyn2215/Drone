@@ -1,0 +1,135 @@
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/types.h:31[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose2.h:23[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:15[m[K:
+[01m[K/usr/include/tbb/task_scheduler_init.h:21:154:[m[K [01;36m[Knote: [m[K#pragma message: TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual.
+   21 | #pragma message("TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual."[01;36m[K)[m[K
+      |                                                                                                                                                          [01;36m[K^[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/types.h:31[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose2.h:23[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/2DRYEFactors.hpp:2[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/uwb_cali.cpp:20[m[K:
+[01m[K/usr/include/tbb/task_scheduler_init.h:21:154:[m[K [01;36m[Knote: [m[K#pragma message: TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual.
+   21 | #pragma message("TBB Warning: tbb/task_scheduler_init.h is deprecated. For details, please see Deprecated Features appendix in the TBB reference manual."[01;36m[K)[m[K
+      |                                                                                                                                                          [01;36m[K^[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/linearExceptions.h:20[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/JacobianFactor-inl.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/JacobianFactor.h:391[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/nonlinear/NonlinearFactor.h:25[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/slam/BetweenFactor.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:17[m[K:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/ThreadsafeException.h:48:30:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktbb_exception[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   48 |   typedef tbb::tbb_exception [01;35m[KBase[m[K;
+      |                              [01;35m[K^~~~[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/types.h:32[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose2.h:23[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:15[m[K:
+[01m[K/usr/include/tbb/tbb_exception.h:137:24:[m[K [01;36m[Knote: [m[Kdeclared here
+  137 | class __TBB_DEPRECATED [01;36m[Ktbb_exception[m[K : public std::exception
+      |                        [01;36m[K^~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/linearExceptions.h:20[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/JacobianFactor-inl.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/JacobianFactor.h:391[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/nonlinear/NonlinearFactor.h:25[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/slam/BetweenFactor.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:17[m[K:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/ThreadsafeException.h:86:45:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktbb_exception[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   86 |   virtual tbb::tbb_exception* move() throw ([01;35m[K)[m[K {
+      |                                             [01;35m[K^[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/types.h:32[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose2.h:23[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:15[m[K:
+[01m[K/usr/include/tbb/tbb_exception.h:137:24:[m[K [01;36m[Knote: [m[Kdeclared here
+  137 | class __TBB_DEPRECATED [01;36m[Ktbb_exception[m[K : public std::exception
+      |                        [01;36m[K^~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/linearExceptions.h:20[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/JacobianFactor-inl.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/JacobianFactor.h:391[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/nonlinear/NonlinearFactor.h:25[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/2DRYEFactors.hpp:4[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/uwb_cali.cpp:20[m[K:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/ThreadsafeException.h:48:30:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktbb_exception[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   48 |   typedef tbb::tbb_exception [01;35m[KBase[m[K;
+      |                              [01;35m[K^~~~[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/types.h:32[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose2.h:23[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/2DRYEFactors.hpp:2[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/uwb_cali.cpp:20[m[K:
+[01m[K/usr/include/tbb/tbb_exception.h:137:24:[m[K [01;36m[Knote: [m[Kdeclared here
+  137 | class __TBB_DEPRECATED [01;36m[Ktbb_exception[m[K : public std::exception
+      |                        [01;36m[K^~~~~~~~~~~~~[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/linearExceptions.h:20[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/JacobianFactor-inl.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/linear/JacobianFactor.h:391[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/nonlinear/NonlinearFactor.h:25[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/2DRYEFactors.hpp:4[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/uwb_cali.cpp:20[m[K:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/ThreadsafeException.h:86:45:[m[K [01;35m[Kwarning: [m[K‘[01m[Ktbb_exception[m[K’ is deprecated [[01;35m[K-Wdeprecated-declarations[m[K]
+   86 |   virtual tbb::tbb_exception* move() throw ([01;35m[K)[m[K {
+      |                                             [01;35m[K^[m[K
+In file included from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/types.h:32[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/global_includes.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Vector.h:27[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Matrix.h:26[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/base/Manifold.h:22[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/BearingRange.h:21[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/gtsam_catkin/include/gtsam/geometry/Pose2.h:23[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/2DRYEFactors.hpp:2[m[K,
+                 from [01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/uwb_cali.cpp:20[m[K:
+[01m[K/usr/include/tbb/tbb_exception.h:137:24:[m[K [01;36m[Knote: [m[Kdeclared here
+  137 | class __TBB_DEPRECATED [01;36m[Ktbb_exception[m[K : public std::exception
+      |                        [01;36m[K^~~~~~~~~~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:[m[K In member function ‘[01m[Kvoid UwbSimNode::Measureupdate()[m[K’:
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:134:31:[m[K [01;31m[Kerror: [m[K‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<uwb_msgs::UwbResultStamped_<std::allocator<void> > >, uwb_msgs::UwbResultStamped_<std::allocator<void> > >::value_type[m[K’ {aka ‘[01m[Kstruct uwb_msgs::UwbResultStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kuav_ids[m[K’; did you mean ‘[01m[Kuwb_ids[m[K’?
+  134 |             uwb_sim_result[i].[01;31m[Kuav_ids[m[K[j] = j;
+      |                               [01;31m[K^~~~~~~[m[K
+      |                               [32m[Kuwb_ids[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:136:35:[m[K [01;31m[Kerror: [m[K‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<uwb_msgs::UwbResultStamped_<std::allocator<void> > >, uwb_msgs::UwbResultStamped_<std::allocator<void> > >::value_type[m[K’ {aka ‘[01m[Kstruct uwb_msgs::UwbResultStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kuav_r[m[K’
+  136 |                 uwb_sim_result[i].[01;31m[Kuav_r[m[K[j] = 0;
+      |                                   [01;31m[K^~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:137:35:[m[K [01;31m[Kerror: [m[K‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<uwb_msgs::UwbResultStamped_<std::allocator<void> > >, uwb_msgs::UwbResultStamped_<std::allocator<void> > >::value_type[m[K’ {aka ‘[01m[Kstruct uwb_msgs::UwbResultStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kuav_Y[m[K’
+  137 |                 uwb_sim_result[i].[01;31m[Kuav_Y[m[K[j] = 0;
+      |                                   [01;31m[K^~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:138:35:[m[K [01;31m[Kerror: [m[K‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<uwb_msgs::UwbResultStamped_<std::allocator<void> > >, uwb_msgs::UwbResultStamped_<std::allocator<void> > >::value_type[m[K’ {aka ‘[01m[Kstruct uwb_msgs::UwbResultStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kuav_P[m[K’
+  138 |                 uwb_sim_result[i].[01;31m[Kuav_P[m[K[j] = 0;
+      |                                   [01;31m[K^~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:142:31:[m[K [01;31m[Kerror: [m[K‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<uwb_msgs::UwbResultStamped_<std::allocator<void> > >, uwb_msgs::UwbResultStamped_<std::allocator<void> > >::value_type[m[K’ {aka ‘[01m[Kstruct uwb_msgs::UwbResultStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kuav_r[m[K’
+  142 |             uwb_sim_result[i].[01;31m[Kuav_r[m[K[j] = sqrt(pow(uav_gt_pos[i].x - uav_gt_pos[j].x, 2) +
+      |                               [01;31m[K^~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:153:31:[m[K [01;31m[Kerror: [m[K‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<uwb_msgs::UwbResultStamped_<std::allocator<void> > >, uwb_msgs::UwbResultStamped_<std::allocator<void> > >::value_type[m[K’ {aka ‘[01m[Kstruct uwb_msgs::UwbResultStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kuav_r[m[K’
+  153 |             uwb_sim_result[i].[01;31m[Kuav_r[m[K[j] = 0;
+      |                               [01;31m[K^~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:164:27:[m[K [01;31m[Kerror: [m[K‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<uwb_msgs::UwbResultStamped_<std::allocator<void> > >, uwb_msgs::UwbResultStamped_<std::allocator<void> > >::value_type[m[K’ {aka ‘[01m[Kstruct uwb_msgs::UwbResultStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kuav_Y[m[K’
+  164 |         uwb_sim_result[i].[01;31m[Kuav_Y[m[K[j] = atan2(transformed.y, transformed.x) + randn(0,sigma_Y)*M_PI/180;
+      |                           [01;31m[K^~~~~[m[K
+[01m[K/home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/src/uwb/src/playground.cpp:166:27:[m[K [01;31m[Kerror: [m[K‘[01m[K__gnu_cxx::__alloc_traits<std::allocator<uwb_msgs::UwbResultStamped_<std::allocator<void> > >, uwb_msgs::UwbResultStamped_<std::allocator<void> > >::value_type[m[K’ {aka ‘[01m[Kstruct uwb_msgs::UwbResultStamped_<std::allocator<void> >[m[K’} has no member named ‘[01m[Kuav_P[m[K’
+  166 |         uwb_sim_result[i].[01;31m[Kuav_P[m[K[j] = atan2(transformed.z, sqrt(pow(transformed.x, 2) + pow(transformed.y, 2))) + randn(0,sigma_P)*M_PI/180;
+      |                           [01;31m[K^~~~~[m[K
+make[2]: *** [CMakeFiles/playground.dir/build.make:63: CMakeFiles/playground.dir/src/playground.cpp.o] Error 1
+make[1]: *** [CMakeFiles/Makefile2:166: CMakeFiles/playground.dir/all] Error 2
+make[1]: *** Waiting for unfinished jobs....
+make: *** [Makefile:141: all] Error 2

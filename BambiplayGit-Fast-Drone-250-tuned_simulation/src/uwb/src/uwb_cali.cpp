@@ -7,6 +7,7 @@
 #include <geometry_msgs/Point.h>
 #include <geometry_msgs/PointStamped.h>
 #include <geometry_msgs/Pose2D.h>
+#include <geometry_msgs/Pose.h>
 #include <geometry_msgs/Quaternion.h>
 #include <geometry_msgs/PoseStamped.h>
 #include <uwb_msgs/UwbResultStamped.h>
@@ -55,10 +56,12 @@ private:
     unsigned int protective_counter{0};
     unsigned int protective_count{100*2};
     int uav_num{3}; // number of uavs
+    int bs_num{0};  // number of base stations
     int self_id{0}; // self id
     double sigma_r{0.3};    // measurement noise, in meter
     double sigma_Y{5};    // measurement noise, in degree
     double sigma_P{10};    // measurement noise, in degree
+    double uwb_frequency{100};  // uwb frequency, in Hz
     double walk_sigma_x, walk_sigma_y, walk_sigma_Y; // random walk noise, in meter
 
     std::string odom_name_before; //corresponding topic name (before calibration)
@@ -74,9 +77,14 @@ private:
     // variables
     uwb_msgs::UwbResultStamped uwb_measurements;
     std::vector<nav_msgs::Odometry> odoms_after;
+    std::vector<geometry_msgs::Pose> bs_gt_poses;
     nav_msgs::Odometry odom_before;
     double odom_after_RPY[3]={0,0,0};   // roll, pitch, yaw
     geometry_msgs::Pose2D driftcorrection; // drift correction between odom_before and odom_after, odoms_after[self_id] = odom_before + drift
+    double low_pass_alpha_x=1; // 低通滤波参数, draft_delta = clamp(draft_new - draft_old, -alpha, alpha)
+    double low_pass_alpha_y=1;
+    double low_pass_alpha_Y=5*M_PI/180;
+    double low_pass_beta =0.3; // 低通滤波参数，draft = draft_old + beta * draft_delta
  
     // callbacks
     void OdomAfterCb(const nav_msgs::OdometryConstPtr &msg, int uav_id);    // callback for odometries after calibration
@@ -91,6 +99,11 @@ public:
 UwbCaliNode::UwbCaliNode(){
     cout<<"uwb cali node starting"<<endl;
     nh.param<int>("/uav_num", uav_num, 3);
+    nh.param<int>("/bs_num", bs_num, 0);
+    nh.param<double>("/simulations/uwb_sim_node/timer_duration", uwb_frequency, 0);
+    uwb_frequency=1/uwb_frequency;
+    cout<<"uav_num: "<<uav_num<<endl;
+    cout<<"bs_num: "<<bs_num<<endl;
 
     pnh.param<int>("self_id", self_id, 0);
     pnh.param<double>("walk_sigma_x", walk_sigma_x, 0.05);
@@ -99,7 +112,12 @@ UwbCaliNode::UwbCaliNode(){
     pnh.param<double>("sigma_r", sigma_r, 0.1);
     pnh.param<double>("sigma_Y", sigma_Y, 5);
     pnh.param<double>("sigma_P", sigma_P, 10);
-    
+
+    low_pass_alpha_x = walk_sigma_x*sqrt(1/uwb_frequency)*10; // 低通滤波参数, draft_delta = clamp(draft_new - draft_old, -alpha, alpha)
+    low_pass_alpha_y = low_pass_alpha_x;
+    low_pass_alpha_Y = walk_sigma_Y*sqrt(1/uwb_frequency)*10;
+    low_pass_beta = 0.5; // 低通滤波参数，draft = draft_old + beta * draft_delta
+
     driftcorrection.x=driftcorrection.y=driftcorrection.theta=0;
 
     // initialize vectors
@@ -108,6 +126,27 @@ UwbCaliNode::UwbCaliNode(){
     odom_names_after.resize(uav_num);
     odom_after_subs.resize(uav_num);
     odoms_after.resize(uav_num);
+    bs_gt_poses.resize(bs_num);
+    
+    // initialize basestation positions(stationary)
+    for(int i=0; i<bs_num; i++){
+        nh.param<double>("/bs"+std::to_string(i)+"_x", bs_gt_poses[i].position.x, 0.0);
+        nh.param<double>("/bs"+std::to_string(i)+"_y", bs_gt_poses[i].position.y, 0.0);
+        nh.param<double>("/bs"+std::to_string(i)+"_z", bs_gt_poses[i].position.z, 0.0);
+        double R,P,Y;
+        nh.param<double>("/bs"+std::to_string(i)+"_R", R, 0.0);
+        nh.param<double>("/bs"+std::to_string(i)+"_P", P, 0.0);
+        nh.param<double>("/bs"+std::to_string(i)+"_Y", Y, 0.0);
+        tf2::Quaternion myQuaternion;
+        myQuaternion.setRPY(R, P, Y);
+        bs_gt_poses[i].orientation=tf2::toMsg(myQuaternion);
+        cout<<"bs"<<i<<"_x: "<<bs_gt_poses[i].position.x<<endl;
+        cout<<"bs"<<i<<"_y: "<<bs_gt_poses[i].position.y<<endl;
+        cout<<"bs"<<i<<"_z: "<<bs_gt_poses[i].position.z<<endl;
+        cout<<"bs"<<i<<"_R: "<<R<<endl;
+        cout<<"bs"<<i<<"_P: "<<P<<endl;
+        cout<<"bs"<<i<<"_Y: "<<Y<<endl;
+    }
 
     for(int i=0; i<uav_num; i++){
         odom_names_after[i] = "/drone" + std::to_string(i) + "/global_odom_cali";
@@ -174,8 +213,8 @@ void UwbCaliNode::UpdateDrift(){
     // self pose before calibration
     double self_xyz_now[3]={odoms_after[self_id].pose.pose.position.x,
     odoms_after[self_id].pose.pose.position.y,odoms_after[self_id].pose.pose.position.z};
-    double self_RPY_before[3]={odom_after_RPY[0],odom_after_RPY[1],odom_after_RPY[2]};
-    double prior_noise_factor= sqrt(1);
+    double self_RPY_now[3]={odom_after_RPY[0],odom_after_RPY[1],odom_after_RPY[2]};
+    double prior_noise_factor= sqrt(0.5);
     double prior_noise_xyY[3]={walk_sigma_x*prior_noise_factor,walk_sigma_y*prior_noise_factor,walk_sigma_Y*prior_noise_factor};  // needs to be tuned
 
     // noise models
@@ -187,18 +226,28 @@ void UwbCaliNode::UpdateDrift(){
     noiseModel::Diagonal::shared_ptr ynmodel = noiseModel::Diagonal::Sigmas(Vector1(yawnoise));
     
     NonlinearFactorGraph graph;
-    Pose2 priorMean(self_xyz_now[0], self_xyz_now[1], self_RPY_before[2]);
+    Pose2 priorMean(self_xyz_now[0], self_xyz_now[1], self_RPY_now[2]);
     noiseModel::Diagonal::shared_ptr priorNoise = noiseModel::Diagonal::Sigmas(Vector3(prior_noise_xyY[0], prior_noise_xyY[1], prior_noise_xyY[2]));
     graph.add(PriorFactor<Pose2>(1, priorMean, priorNoise));
 
-   // add factors
+   // add factors (uavs)
     for(int i=0; i<uav_num; i++){
         if(i==self_id) continue;
         double other_xyz[3]={odoms_after[i].pose.pose.position.x,
         odoms_after[i].pose.pose.position.y,odoms_after[i].pose.pose.position.z};
-        double uwb_range = uwb_measurements.uav_r[i];
-        double uwb_P = uwb_measurements.uav_P[i];
-        double uwb_Y = uwb_measurements.uav_Y[i];
+        double uwb_range = uwb_measurements.uwb_r[i];
+        double uwb_P = uwb_measurements.uwb_P[i];
+        double uwb_Y = uwb_measurements.uwb_Y[i];
+        graph.add(RangeFactor(1, uwb_range, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], rnmodel));
+        graph.add(ElevFactor(1, uwb_P, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], enmodel));
+        graph.add(YawFactor(1, uwb_Y, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], ynmodel));
+    }
+    // add factors (base stations)
+    for(int i=0; i<bs_num; i++){
+        double other_xyz[3]={bs_gt_poses[i].position.x,bs_gt_poses[i].position.y,bs_gt_poses[i].position.z};
+        double uwb_range = uwb_measurements.uwb_r[i+uav_num];
+        double uwb_P = uwb_measurements.uwb_P[i+uav_num];
+        double uwb_Y = uwb_measurements.uwb_Y[i+uav_num];
         graph.add(RangeFactor(1, uwb_range, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], rnmodel));
         graph.add(ElevFactor(1, uwb_P, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], enmodel));
         graph.add(YawFactor(1, uwb_Y, other_xyz[0], other_xyz[1], other_xyz[2]-self_xyz_now[2], ynmodel));
@@ -218,9 +267,16 @@ void UwbCaliNode::UpdateDrift(){
     tf2::Matrix3x3 m(gtquat);
     m.getRPY(r, p, y);
     Pose2 newpose = result.at<Pose2>(1);
-    driftcorrection.x = newpose.x() - odom_before.pose.pose.position.x;
-    driftcorrection.y = newpose.y() - odom_before.pose.pose.position.y;
-    driftcorrection.theta = angle_protect(newpose.theta() - y);
+    // low pass filter
+    double delta_drift_x = newpose.x() - odom_before.pose.pose.position.x - driftcorrection.x;
+    double delta_drift_y = newpose.y() - odom_before.pose.pose.position.y - driftcorrection.y;
+    double delta_drift_Y = angle_protect(newpose.theta() - y - driftcorrection.theta);
+    delta_drift_x = std::max(std::min(delta_drift_x, low_pass_alpha_x), -low_pass_alpha_x);
+    delta_drift_y = std::max(std::min(delta_drift_y, low_pass_alpha_y), -low_pass_alpha_y);
+    delta_drift_Y = std::max(std::min(delta_drift_Y, low_pass_alpha_Y), -low_pass_alpha_Y);
+    driftcorrection.x += low_pass_beta * delta_drift_x;
+    driftcorrection.y += low_pass_beta * delta_drift_y;
+    driftcorrection.theta += angle_protect(low_pass_beta * delta_drift_Y);
 }
 
 int main(int argc, char *argv[]) {

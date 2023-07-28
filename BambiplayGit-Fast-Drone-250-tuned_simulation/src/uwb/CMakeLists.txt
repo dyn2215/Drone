@@ -147,7 +147,9 @@ include_directories(
 add_executable(drift_node src/drift_node.cpp)
 add_executable(uwb_sim src/uwb_sim.cpp)
 add_executable(uwb_cali src/uwb_cali.cpp)
-add_executable(playground src/playground.cpp)
+add_executable(target_pub src/target_pub.cpp)
+add_executable(statistic_cal src/statistic_cal.cpp)
+# add_executable(playground src/playground.cpp)
 
 
 ## Rename C++ executable without prefix
@@ -167,12 +169,19 @@ target_link_libraries(drift_node
 target_link_libraries(uwb_sim
   ${catkin_LIBRARIES}
 )
-target_link_libraries(playground
-  ${catkin_LIBRARIES}
-)
 target_link_libraries(uwb_cali
   ${catkin_LIBRARIES}
 )
+target_link_libraries(target_pub
+  ${catkin_LIBRARIES}
+)
+target_link_libraries(statistic_cal
+  ${catkin_LIBRARIES}
+)
+# target_link_libraries(playground
+#   ${catkin_LIBRARIES}
+# )
+
 #############
 ## Install ##
 #############
