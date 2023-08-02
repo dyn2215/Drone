@@ -55,27 +55,30 @@ int main(int argc, char **argv)
 
 OdomPublisherNode::OdomPublisherNode() {
     nh.param<int>("/uav_num", num_uav, 3);
+    uavInitPos_.resize(num_uav);
     nh.param("/uav_init_pos", uavInitPos_, std::vector<float>(0));
 
     uavInitPos.resize(num_uav);
     uavOdomSub.resize(num_uav);
     uavOdomPub.resize(num_uav);
 
-    std::cout << "fuck" << std::endl;
+    std::cout << "hello" << std::endl;
+    std::cout << num_uav << std::endl;
     for (int i = 0; i < num_uav; i++) {
-        std::cout << "fuck" << i << std::endl;
+        std::cout << "hello" << i << std::endl;
         uavInitPos[i].x = uavInitPos_[i * 2];
         uavInitPos[i].y = uavInitPos_[i * 2 + 1];
     }
     // UAV Odom Pub
    
     // UAV Odom subscribe
+    std::cout << num_uav << std::endl;
     for (int i = 0; i < num_uav; i++) {
         uavOdomPub[i] = nh.advertise<nav_msgs::Odometry>(
-            drone_prefix + std::to_string(i)+ "/odom_true",6);
+            "/"+drone_prefix + std::to_string(i)+ "/odom_true",6);
 
         uavOdomSub[i] = nh.subscribe<nav_msgs::Odometry>(
-                drone_prefix + std::to_string(i)+ "/mavros/local_position/odom", 6,
+                "/"+drone_prefix + std::to_string(i)+ "/mavros/local_position/odom", 6,
                 boost::bind(&OdomPublisherNode::uavOdomCb, this, _1, i));
     }
 }

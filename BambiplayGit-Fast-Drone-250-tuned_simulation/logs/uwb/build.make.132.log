@@ -1,0 +1,5 @@
+[ 40%] Built target statistic_cal
+[ 40%] Built target target_pub
+[ 60%] Built target uwb_cali
+[ 80%] Built target uwb_sim
+[100%] Built target drift_node

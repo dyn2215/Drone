@@ -3,14 +3,14 @@ hyperparameters:
  stddevy=0.1
  stddevYdeg=10.0
 drone0 position:
- drone0_init_x=0.135885435891
- drone0_init_y=-0.128320649937
- drone0_init_Y=-0.233137698617
+ drone0_init_x=-0.00825100085366
+ drone0_init_y=-0.0503990595621
+ drone0_init_Y=-0.0620549964082
 drone1 position:
- drone1_init_x=-0.0692475059494
- drone1_init_y=1.03790739304
- drone1_init_Y=0.102394471193
+ drone1_init_x=0.0593726439508
+ drone1_init_y=0.940011799768
+ drone1_init_Y=0.195776811245
 drone2 position:
- drone2_init_x=-0.0205487662098
- drone2_init_y=2.1048141045
- drone2_init_Y=0.172500210312
+ drone2_init_x=-0.0710897939394
+ drone2_init_y=1.94296123716
+ drone2_init_Y=0.223753519971

@@ -1,0 +1,6 @@
+[35m[1mScanning dependencies of target odom_publisher_node[0m
+[ 12%] [32mBuilding CXX object CMakeFiles/odom_publisher_node.dir/src/odom_publisher_node.cpp.o[0m
+[ 62%] Built target ego_planner_node
+[ 87%] Built target traj_server
+[100%] [32m[1mLinking CXX executable /home/nics/Drone/BambiplayGit-Fast-Drone-250-tuned_simulation/devel/.private/ego_planner/lib/ego_planner/odom_publisher_node[0m
+[100%] Built target odom_publisher_node
